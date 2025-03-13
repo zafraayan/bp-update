@@ -168,11 +168,17 @@ function BpRecords() {
   const dispatch = useDispatch();
 
   const [isClient, setIsClient] = useState(false);
-  const [asData, setAsData] = useState(false);
+  const [dataReady, setDataReady] = useState(false);
 
   useEffect(() => {
     setIsClient(true); // Ensures rendering happens after the component mounts
   }, []);
+
+  useEffect(() => {
+    if (toPrint) {
+      setDataReady(true);
+    }
+  }, [toPrint]);
 
   function handleEdit(id) {
     dispatch(setEditPopup({ state: true }));
@@ -190,9 +196,8 @@ function BpRecords() {
 
   function handleDownload(id) {
     const toPrint = records.find((el) => el.id === id);
-    setAsData(toPrint);
+
     dispatch(setToPrint(toPrint));
-    console.log(toPrint);
   }
 
   if (isLoading) return <p>Loading...</p>;
@@ -240,7 +245,7 @@ function BpRecords() {
 
                     {isClient ? (
                       <PDFDownloadLink
-                        document={<PrintableDocument toPrint={asData} />}
+                        document={<PrintableDocument toPrint={toPrint} />}
                         fileName="locationla-clearance.pdf"
                       >
                         <span
