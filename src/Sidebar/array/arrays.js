@@ -234,7 +234,7 @@ export const errorMessage = [
   {
     id: 7,
     name: "cNumber",
-    message: "Contact: Invalid Number",
+    message: "Invalid Contact Number",
   },
   {
     id: 8,

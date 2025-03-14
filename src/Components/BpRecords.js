@@ -30,7 +30,7 @@ const ButtonStyle = styled.button`
   width: 10%;
   /* border-radius: 10px; */
   padding: 10px;
-  margin-right: 10px;
+  /* margin-right: 10px; */
   background-color: rgb(0, 0, 0);
   color: white;
   font-size: 12px;
@@ -63,7 +63,7 @@ const Search = styled.div`
 `;
 
 const Data = styled.div`
-  overflow: scroll;
+  overflow: auto;
   width: 100%;
   height: 100%;
   display: flex;
@@ -155,10 +155,17 @@ const Popup = styled.div`
   box-shadow: 10px 10px 5px gray;
 `;
 
+const Pagination = styled.div`
+  display: flex;
+  gap: 10px;
+  place-content: center;
+  align-items: center;
+`;
+
 function BpRecords() {
   const [clicked, setClicked] = useState();
   const { useData, useDelete } = Crud();
-  const { data: deleteData, isLoading: deleteLoading } = useDelete();
+
   const deleteMutation = useDelete();
   const { data: records, isLoading, error } = useData();
   const editPopup = useSelector((state) => state.business.editPopup.state);
@@ -168,17 +175,12 @@ function BpRecords() {
   const dispatch = useDispatch();
 
   const [isClient, setIsClient] = useState(false);
+  const [asData, setAsData] = useState();
   const [dataReady, setDataReady] = useState(false);
 
   useEffect(() => {
     setIsClient(true); // Ensures rendering happens after the component mounts
   }, []);
-
-  useEffect(() => {
-    if (toPrint) {
-      setDataReady(true);
-    }
-  }, [toPrint]);
 
   function handleEdit(id) {
     dispatch(setEditPopup({ state: true }));
@@ -189,16 +191,19 @@ function BpRecords() {
     deleteMutation.mutate(id);
   }
 
-  // function handlePrint(id) {
-  //   console.log(id);
-  //   dispatch(setSliceId("Print / Download"));
-  // }
-
-  function handleDownload(id) {
-    const toPrint = records.find((el) => el.id === id);
-
-    dispatch(setToPrint(toPrint));
+  function handlePrint(id) {
+    const toPrints = records.find((el) => el.id === id);
+    dispatch(setToPrint(toPrints));
+    dispatch(setSliceId("Print / Download"));
   }
+
+  const itemsPerPage = 22;
+  const [currentPage, setCurrentPage] = useState(1);
+  const totalPages = Math.ceil(records?.length / itemsPerPage);
+  const startIndex = (currentPage - 1) * itemsPerPage;
+  const currentItems = records
+    ?.slice(startIndex, startIndex + itemsPerPage)
+    .sort((a, b) => a.id - b.id);
 
   if (isLoading) return <p>Loading...</p>;
   if (error) console.log(error);
@@ -211,7 +216,6 @@ function BpRecords() {
         </Popup>
       )}
       <RecordWrapper>
-        {toPrint.id}
         <h1>Records</h1>
         <Search>
           <ButtonStyle>Search</ButtonStyle>
@@ -229,7 +233,7 @@ function BpRecords() {
                 <th>Legal Basis</th>
                 <th>Actions</th>
               </tr>
-              {records.map((el) => (
+              {currentItems?.map((el) => (
                 <tr key={el.id}>
                   <td>{`${el.fName} ${el.mName} ${el.lName}`}</td>
                   <td>{el.barangay}</td>
@@ -243,29 +247,12 @@ function BpRecords() {
                       <FaEdit />
                     </span>
 
-                    {isClient ? (
-                      <PDFDownloadLink
-                        document={<PrintableDocument toPrint={toPrint} />}
-                        fileName="locationla-clearance.pdf"
-                      >
-                        <span
-                          onClick={() => handleDownload(el.id)}
-                          className="download"
-                          title="Download"
-                        >
-                          <FaDownload />
-                        </span>
-                      </PDFDownloadLink>
-                    ) : (
-                      "Preparing PDF..."
-                    )}
-
                     <span title="Delete" onClick={() => handleDelete(el.id)}>
                       <FaDeleteLeft />
                     </span>
-                    {/* <span title="Print" onClick={() => handlePrint(el.id)}>
+                    <span title="Print" onClick={() => handlePrint(el.id)}>
                       <FaPrint />
-                    </span> */}
+                    </span>
                   </Icons>
                 </tr>
               ))}
@@ -273,7 +260,23 @@ function BpRecords() {
           </Table>
         </Data>
       </RecordWrapper>
-      <div>Pages</div>
+      <Pagination>
+        <ButtonStyle
+          onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
+          disabled={currentPage === 1}
+        >
+          Prev
+        </ButtonStyle>
+        <span>{`Page ${currentPage} of ${totalPages}`}</span>
+        <ButtonStyle
+          onClick={() =>
+            setCurrentPage((prev) => Math.min(prev + 1, totalPages))
+          }
+          disabled={currentPage === totalPages}
+        >
+          Next
+        </ButtonStyle>
+      </Pagination>
     </>
   );
 }

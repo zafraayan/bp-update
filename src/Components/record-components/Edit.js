@@ -16,6 +16,7 @@ import {
   zoningClassification,
 } from "../../Sidebar/array/arrays";
 import Error from "../Error";
+import { formatNumber } from "../../helpers/formatNumber";
 
 const RegistrationWrapper = styled.div`
   display: flex;
@@ -153,19 +154,13 @@ function Edit({ selected }) {
   const forUpdate = records.find((el) => el.id === Number(selected));
   const watchedValues = watch();
 
-  // console.log(selected);
-
-  // useEffect(() => {
-  //   setFormData(watchedValues);
-  // }, []);
+  const capital = watch("busCapital", "");
 
   useEffect(() => {
     if (forUpdate) {
       reset(forUpdate); // Set fetched data as default values
     }
-    // Object.keys(forUpdate).forEach((key) => {
-    //   setValue(key, forUpdate[key]); // Ensures all form fields are updated
-    // });
+
     console.log(forUpdate);
   }, [forUpdate, reset]);
 
@@ -176,8 +171,6 @@ function Edit({ selected }) {
       updatedItem: watchedValues,
     });
   }
-
-  const lastElement = records.at(-1);
 
   return (
     <>
@@ -244,10 +237,7 @@ function Edit({ selected }) {
           <input
             type="number"
             placeholder="Contact Number"
-            {...register("cNumber", {
-              required: true,
-              min: { value: 1 },
-            })}
+            {...register("cNumber")}
           ></input>
 
           <select {...register("decision")}>
@@ -272,22 +262,23 @@ function Edit({ selected }) {
             {...register("busType", { required: true })}
           ></input>
           <input
-            type="number"
+            type="text"
             placeholder="Business Capital"
+            value={formatNumber(capital)}
+            onChange={(e) =>
+              setValue("amount", e.target.value.replace(/,/g, ""))
+            }
             {...register("busCapital", { required: true, min: { value: 1 } })}
           ></input>
           <input
             type="number"
             placeholder="Number of Male Employee"
-            {...register("male", {
-              required: true,
-              min: { value: 0 },
-            })}
+            {...register("male")}
           ></input>
           <input
             type="number"
             placeholder="Number of Female Employee"
-            {...register("female", { required: true, min: { value: 0 } })}
+            {...register("female")}
           ></input>
           {/* ------------LineBreak--------------- */}
           <div className="header">
@@ -334,11 +325,7 @@ function Edit({ selected }) {
               <option key={i}>{el}</option>
             ))}
           </select>
-          <input
-            type="number"
-            placeholder="Area"
-            {...register("area", { required: true, min: { value: 1 } })}
-          ></input>
+          <input type="number" placeholder="Area" {...register("area")}></input>
           <select {...register("legalBasis")}>
             {legalBasis.map((el, i) => (
               <option key={i}>{el}</option>
@@ -358,22 +345,13 @@ function Edit({ selected }) {
           <input
             type="number"
             placeholder="Amount Paid"
-            {...register("amountPaid", { required: true, min: { value: 1 } })}
+            {...register("amountPaid")}
           ></input>
           <select {...register("inspector")}>
             {inspector.map((el, i) => (
-              <option key={i}>
-                {el.name} - {el.position}
-              </option>
+              <option key={i}>{el.name}</option>
             ))}
           </select>
-          <input
-            type="text"
-            {...register("decisionNumber", { required: true })}
-            value={`CZC-07-${new Date().getFullYear()}-${lastElement.id + 1}
-            `}
-            style={{ pointerEvents: "none", color: "gray" }}
-          ></input>
         </RegistrationWrapper>
         <ButtonStyle
           title="Complete the fields to submit entry"

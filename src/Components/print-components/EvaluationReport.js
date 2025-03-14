@@ -4,6 +4,8 @@ import { View, Text, Image } from "@react-pdf/renderer";
 import "./evaluationStyle";
 import { styles } from "./evaluationStyle";
 import box from "../../images/box.png";
+import { formatDate } from "../../helpers/formatDate";
+import { inspector } from "../../Sidebar/array/arrays";
 
 function EvaluationReport({ toPrint }) {
   return (
@@ -17,35 +19,37 @@ function EvaluationReport({ toPrint }) {
 
       <View style={styles.spacer}>
         <Text style={styles.twoColumns}>
-          Date Inspected: <Text style={styles.value}>{toPrint?.date}</Text>
+          Date Inspected:{" "}
+          <Text style={styles.value}>{formatDate(toPrint?.date)}</Text>
         </Text>
         <Text style={styles.twoColumns}>
           Contact No.: <Text style={styles.value}>{toPrint?.cNumber}</Text>
         </Text>
         <Text style={styles.fullWidth}>
-          Date Submitted: <Text style={styles.value}>{toPrint?.date}</Text>
+          Date Submitted:{" "}
+          <Text style={styles.value}>{formatDate(toPrint?.date)}</Text>
         </Text>
         <Text style={styles.fullWidth}>
-          Name of Applicant:{" "}
+          Name of Applicant:
           <Text
             style={styles.value}
-          >{`${toPrint?.fName} ${toPrint?.mName} ${toPrint?.lName}`}</Text>
+          >{` ${toPrint?.fName} ${toPrint?.mName} ${toPrint?.lName}`}</Text>
         </Text>
         <Text style={styles.fullWidth}>
-          Name of Establishment:{" "}
+          Name of Establishment:
           <Text style={styles.value}>{toPrint?.busName}</Text>
         </Text>
         <Text style={styles.twoColumns}>
-          Location:{" "}
+          Location:
           <Text
             style={styles.value}
-          >{`${toPrint?.building}, ${toPrint?.barangay}, ${toPrint?.city}`}</Text>
+          >{` ${toPrint?.building}, ${toPrint?.barangay}, ${toPrint?.city}`}</Text>
         </Text>
         <Text style={styles.twoColumns}>
           Area: <Text style={styles.value}>{toPrint?.area}</Text>
         </Text>
         <Text style={styles.fullWidth}>
-          Business Description:{" "}
+          Business Description:
           <Text style={styles.value}>{toPrint?.busType}</Text>
         </Text>
         <Text style={styles.fullWidth}>
@@ -102,12 +106,10 @@ function EvaluationReport({ toPrint }) {
           </View>
         </View>
         <Text style={styles.fullWidth}>
-          {" "}
-          Zoning Classification:{" "}
+          Zoning Classification:
           <Text style={styles.value}>{toPrint?.zonClassification}</Text>
         </Text>
         <Text style={styles.fullWidth}>
-          {" "}
           Recommendation: <Text style={styles.value}></Text>
         </Text>
         <View style={styles.recOneColumn}>
@@ -152,9 +154,11 @@ function EvaluationReport({ toPrint }) {
           </View>
         </View>
         <View style={styles.signaturiesWrapper}>
-          <Text style={styles.signaturiesName}> ERWIN C. BACALSO </Text>
+          <Text style={styles.signaturiesName}> {toPrint?.inspector} </Text>
           <Text style={styles.signaturiesPosition}>
-            Administrative Aide III - Clerk
+            {inspector.map(
+              (el) => el.name === toPrint?.inspector && el.position
+            )}
           </Text>
         </View>
         <View style={styles.signaturiesWrapper}>

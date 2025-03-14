@@ -14,6 +14,7 @@ import { useSelector } from "react-redux";
 
 function PrintDownload() {
   const toPrint = useSelector((state) => state.business.toPrint);
+  console.log(toPrint);
   return (
     <>
       <h1>Print / Download </h1>
@@ -30,14 +31,5 @@ function PrintDownload() {
     </>
   );
 }
-
-export const PrintableDocument = ({ toPrint }) => (
-  <Document>
-    <Page size="Folio" style={styles.page}>
-      {/* <Header /> */}
-      <Body toPrint={toPrint} />
-    </Page>
-  </Document>
-);
 
 export default PrintDownload;

@@ -16,6 +16,7 @@ import Error from "./Error";
 import Crud from "../database/Crud";
 import { useDispatch, useSelector } from "react-redux";
 import { setDisable } from "../businessSlice";
+import { formatNumber } from "../helpers/formatNumber";
 
 const RegistrationWrapper = styled.div`
   display: flex;
@@ -116,6 +117,7 @@ function Registration(e) {
     register,
     handleSubmit,
     watch,
+    setValue,
     reset,
     formState: { errors },
   } = useForm();
@@ -136,6 +138,8 @@ function Registration(e) {
   const allValues = watch();
   const zaf = Object.values(allValues).filter((el) => !el);
 
+  const capital = watch("busCapital", "");
+
   useEffect(() => {
     zaf.length > 0
       ? dispatch(setDisable("none"))
@@ -149,11 +153,12 @@ function Registration(e) {
   // setLastElement(() => records.at(-1));
   // }
 
-  const lastElement = records.at(-1);
+  const lastElement = records.sort((a, b) => a.id - b.id).at(-1);
 
   return (
     <>
       <Toaster />
+
       <form>
         <RegistrationWrapper>
           <div className="header">
@@ -245,8 +250,12 @@ function Registration(e) {
             {...register("busType", { required: true })}
           ></input>
           <input
-            type="number"
+            type="text"
             placeholder="Business Capital"
+            value={formatNumber(capital)}
+            onChange={(e) =>
+              setValue("busCapital", e.target.value.replace(/,/g, ""))
+            }
             {...register("busCapital", { required: true, min: { value: 1 } })}
           ></input>
           <input
@@ -335,9 +344,7 @@ function Registration(e) {
           ></input>
           <select {...register("inspector")}>
             {inspector.map((el, i) => (
-              <option key={i}>
-                {el.name} - {el.position}
-              </option>
+              <option key={i}>{el.name}</option>
             ))}
           </select>
           <input

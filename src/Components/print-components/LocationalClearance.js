@@ -4,8 +4,15 @@ import { View, Text, Image } from "@react-pdf/renderer";
 import city from "../../images/city.jpg";
 import Header from "./Header";
 import { useSelector } from "react-redux";
+import { formatDate } from "../../helpers/formatDate";
+import { useActionData } from "react-router";
+import Crud from "../../database/Crud";
 
 function LocationalClearance({ toPrint, props }) {
+  // const { useData } = Crud();
+  // const { data, error, isLoading } = useData();
+
+  // const lastElement = data?.at(-1);
   return (
     <>
       <Header />
@@ -18,13 +25,15 @@ function LocationalClearance({ toPrint, props }) {
           <View style={styles.spacer}>
             <View style={styles.firstTable}>
               <Text style={styles.tdLabel}>Application No.:</Text>
-              <Text style={styles.tdValue}>zaf</Text>
+              <Text style={styles.tdValue}>
+                {`TAL-BUS-NEW-07-${toPrint.id}`}
+              </Text>
               <Text style={styles.tdLabel}>Decision Number:</Text>
               <Text style={styles.tdValue}>{toPrint?.decisionNumber}</Text>
             </View>
             <View style={styles.firstTable}>
               <Text style={styles.tdLabel}>Date Received:</Text>
-              <Text style={styles.tdValue}>{toPrint?.date}</Text>
+              <Text style={styles.tdValue}>{formatDate(toPrint?.date)}</Text>
               <Text style={styles.tdLabel}></Text>
               <Text style={styles.tdValue}></Text>
             </View>
