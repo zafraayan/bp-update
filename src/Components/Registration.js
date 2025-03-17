@@ -139,6 +139,7 @@ function Registration(e) {
   const zaf = Object.values(allValues).filter((el) => !el);
 
   const capital = watch("busCapital", "");
+  const decNumber = watch("decisionNumber", "");
 
   useEffect(() => {
     zaf.length > 0
@@ -350,9 +351,10 @@ function Registration(e) {
           <input
             type="text"
             {...register("decisionNumber", { required: true })}
-            value={`CZC-07-${new Date().getFullYear()}-${lastElement.id + 1}
-            `}
-            style={{ pointerEvents: "none", color: "gray" }}
+            // value={`CZC-07-${new Date().getFullYear()}-${lastElement?.id + 1}
+            onChange={(e) => setValue("decisionNumber", e.target.value)}
+            value={decNumber}
+            // style={{ pointerEvents: "none", color: "gray" }}
           ></input>
         </RegistrationWrapper>
         <ButtonStyle
