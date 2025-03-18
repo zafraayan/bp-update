@@ -26,10 +26,16 @@ function LocationalClearance({ toPrint, props }) {
             <View style={styles.firstTable}>
               <Text style={styles.tdLabel}>Application No.:</Text>
               <Text style={styles.tdValue}>
-                {`TAL-BUS-NEW-07-${toPrint.id}`}
+                {`TAL-BUS-NEW-07-${new Date()
+                  .getFullYear()
+                  .toString()
+                  .slice(2, 4)}-${toPrint.id}`}
               </Text>
               <Text style={styles.tdLabel}>Decision Number:</Text>
-              <Text style={styles.tdValue}>{toPrint?.decisionNumber}</Text>
+              <Text style={styles.tdValue}>
+                CZC-07-{new Date().getFullYear().toString().slice(2, 4)}-
+                {toPrint?.decisionNumber}
+              </Text>
             </View>
             <View style={styles.firstTable}>
               <Text style={styles.tdLabel}>Date Received:</Text>
@@ -43,9 +49,11 @@ function LocationalClearance({ toPrint, props }) {
             <View style={styles.secondTable}>
               <View style={styles.heading}>
                 <Text style={styles.secondTd}>NAME OF APPLICANT</Text>
-                <Text
-                  style={styles.secondTdValue}
-                >{`${toPrint?.fName} ${toPrint?.mName} ${toPrint?.lName}`}</Text>
+                <Text style={styles.secondTdValue}>
+                  {!toPrint.fName && !toPrint.lName && !toPrint.mName
+                    ? toPrint?.busName
+                    : `${toPrint?.fName} ${toPrint?.mName} ${toPrint?.lName}`}
+                </Text>
               </View>
               <View style={styles.heading}>
                 <Text style={styles.secondTd}>NAME OF CORPORATION</Text>
@@ -71,7 +79,9 @@ function LocationalClearance({ toPrint, props }) {
               </View>
               <View style={styles.heading}>
                 <Text style={styles.secondTd}>CAPITAL INVESTED:</Text>
-                <Text style={styles.secondTdValue}>{toPrint?.busCapital}</Text>
+                <Text style={styles.secondTdValue}>
+                  {toPrint?.busCapital === "00" && "Not Specified"}
+                </Text>
               </View>
             </View>
             <View style={styles.secondTable}>
@@ -84,7 +94,9 @@ function LocationalClearance({ toPrint, props }) {
                   MANPOWER (No. of personnel employed)
                 </Text>
                 <Text style={styles.secondTdValue}>
-                  {toPrint?.male + toPrint?.female} Total Employees
+                  {toPrint?.male === 0 && toPrint?.female === 0
+                    ? "Not Specified"
+                    : `${toPrint?.male + toPrint?.female} Total Employees`}
                 </Text>
               </View>
             </View>
@@ -186,7 +198,7 @@ function LocationalClearance({ toPrint, props }) {
 
               <View style={styles.orNumber}>
                 <Text>Or #: {toPrint?.orNumber}</Text>
-                <Text>Date Issued: {toPrint?.orDate}</Text>
+                <Text>Date Issued: {formatDate(toPrint?.orDate)}</Text>
                 <Text>Amount Paid: {toPrint?.amountPaid}</Text>
               </View>
             </View>

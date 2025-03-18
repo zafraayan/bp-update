@@ -182,19 +182,17 @@ function Registration(e) {
           <input
             type="text"
             placeholder="Last Name"
-            {...register("lName", {
-              required: true,
-            })}
+            {...register("lName")}
           ></input>
           <input
             type="text"
             placeholder="First Name"
-            {...register("fName", { required: true })}
+            {...register("fName")}
           ></input>
           <input
             type="text"
             placeholder="Middle Name"
-            {...register("mName", { required: true })}
+            {...register("mName")}
           ></input>
 
           {/* ------------LineBreak--------------- */}
@@ -235,11 +233,7 @@ function Registration(e) {
             ))}
           </select>
           {/* ------------LineBreak--------------- */}
-          <input
-            type="text"
-            placeholder="Name of Corporation"
-            {...register("corpName", { required: true })}
-          ></input>
+          <input type="text" placeholder="Name of Corporation"></input>
           <input
             type="text"
             placeholder="Name of Business"
@@ -257,7 +251,7 @@ function Registration(e) {
             onChange={(e) =>
               setValue("busCapital", e.target.value.replace(/,/g, ""))
             }
-            {...register("busCapital", { required: true, min: { value: 1 } })}
+            {...register("busCapital", { required: true, min: { value: 0 } })}
           ></input>
           <input
             type="number"
@@ -320,7 +314,7 @@ function Registration(e) {
           <input
             type="number"
             placeholder="Area"
-            {...register("area", { required: true, min: { value: 1 } })}
+            // {...register("area", { required: true, min: { value: 1 } })}
           ></input>
           <select {...register("legalBasis")}>
             {legalBasis.map((el, i) => (
@@ -359,7 +353,7 @@ function Registration(e) {
         </RegistrationWrapper>
         <ButtonStyle
           title="Complete the fields to submit entry"
-          disability={disable}
+          // disability={disable}
           onClick={handleSubmit(onSubmit)}
         >
           SUBMIT

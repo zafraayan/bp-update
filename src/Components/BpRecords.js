@@ -115,6 +115,7 @@ const Table = styled.table`
 
   td {
     padding: 5px;
+    width: 100px;
     border: solid 1px rgb(56, 56, 56);
   }
 `;
@@ -197,7 +198,7 @@ function BpRecords() {
     dispatch(setSliceId("Print / Download"));
   }
 
-  const itemsPerPage = 22;
+  const itemsPerPage = 20;
   const [currentPage, setCurrentPage] = useState(1);
   const totalPages = Math.ceil(records?.length / itemsPerPage);
   const startIndex = (currentPage - 1) * itemsPerPage;
@@ -225,9 +226,9 @@ function BpRecords() {
           <Table>
             <tbody>
               <tr>
-                <th>Name</th>
-                <th>Barangay</th>
+                {/* <th>Name</th> */}
                 <th>Business Name</th>
+                <th>Barangay</th>
                 <th>Business Type</th>
                 <th>Zoning Classification</th>
                 <th>Legal Basis</th>
@@ -235,9 +236,9 @@ function BpRecords() {
               </tr>
               {currentItems?.map((el) => (
                 <tr key={el.id}>
-                  <td>{`${el.fName} ${el.mName} ${el.lName}`}</td>
-                  <td>{el.barangay}</td>
+                  {/* <td>{`${el.fName} ${el.mName} ${el.lName}`}</td> */}
                   <td>{el.busName}</td>
+                  <td>{el.barangay}</td>
                   <td>{el.busType}</td>
                   <td>{el.zonClassification}</td>
                   <td>{el.legalBasis}</td>

@@ -46,7 +46,10 @@ function EvaluationReport({ toPrint }) {
           >{` ${toPrint?.building}, ${toPrint?.barangay}, ${toPrint?.city}`}</Text>
         </Text>
         <Text style={styles.twoColumns}>
-          Area: <Text style={styles.value}>{toPrint?.area}</Text>
+          Area:{" "}
+          <Text style={styles.value}>{`${
+            !toPrint?.area && "Not Specified"
+          } sqm`}</Text>
         </Text>
         <Text style={styles.fullWidth}>
           Business Description:

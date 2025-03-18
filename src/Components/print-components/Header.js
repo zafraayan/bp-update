@@ -9,7 +9,7 @@ function Header() {
     <div>
       <View style={styles.header}>
         <View>
-          <Image style={styles.logo} src={cpdclogo}></Image>
+          <Image style={styles.logo} src={talisaylogo}></Image>
         </View>
 
         <View style={styles.hcenter}>
@@ -21,7 +21,7 @@ function Header() {
         </View>
 
         <View>
-          <Image style={styles.logo} src={talisaylogo}></Image>
+          <Image style={styles.logo} src={cpdclogo}></Image>
         </View>
       </View>
     </div>

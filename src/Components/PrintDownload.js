@@ -9,8 +9,10 @@ import {
 } from "@react-pdf/renderer";
 import { styles } from "./style";
 import Header from "./print-components/Header";
-import Body from "./print-components/Body";
+
 import { useSelector } from "react-redux";
+import LocationalClearance from "./print-components/LocationalClearance";
+import EvaluationReport from "./print-components/EvaluationReport";
 
 function PrintDownload() {
   const toPrint = useSelector((state) => state.business.toPrint);
@@ -22,7 +24,13 @@ function PrintDownload() {
       <PDFViewer style={styles.size}>
         <Document>
           <Page size="Folio" style={styles.page}>
-            <Body toPrint={toPrint} />
+            <LocationalClearance toPrint={toPrint} props={`OWNER'S COPY`} />
+          </Page>
+          <Page size="Folio" style={styles.page}>
+            <LocationalClearance toPrint={toPrint} props={`OWNER'S COPY`} />
+          </Page>
+          <Page size="Folio" style={styles.page}>
+            <EvaluationReport toPrint={toPrint} />
           </Page>
         </Document>
       </PDFViewer>

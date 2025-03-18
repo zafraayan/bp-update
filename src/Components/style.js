@@ -4,6 +4,7 @@ export const styles = StyleSheet.create({
   size: {
     width: "100%",
     height: "100%",
+    fontFamily: "Inter",
   },
 
   page: {
@@ -19,13 +20,15 @@ export const styles = StyleSheet.create({
 
   header: {
     display: "flex",
+    width: "100%",
     flexDirection: "row",
     justifyContent: "space-evenly",
+    flexWrap: "nowrap",
     borderBottomWidth: 1,
     borderBottomColor: "black",
     borderBottomStyle: "solid",
-    paddingBottom: 5, // Optional
-    // backgroundColor: "green",
+    height: 80,
+    // backgroundColor: "orange",
   },
 
   lcHeading: {
@@ -67,9 +70,10 @@ export const styles = StyleSheet.create({
 
   tdValue: {
     flex: 1,
-    padding: 5,
+    padding: 3,
     textAlign: "left",
     fontWeight: 800,
+    placeContent: "center",
   },
   // ----------------------------------------
   secondTable: {
@@ -84,7 +88,7 @@ export const styles = StyleSheet.create({
   },
 
   secondTd: {
-    padding: 3,
+    padding: 4,
   },
 
   secondTdValue: {
@@ -109,7 +113,7 @@ export const styles = StyleSheet.create({
 
   backgroundImage: {
     opacity: 0.2,
-    height: "350px",
+    height: "330px",
   },
 
   conditionItem: {
@@ -120,12 +124,13 @@ export const styles = StyleSheet.create({
     width: "95%",
     display: "flex",
     gap: 5,
+    fontSize: 11,
   },
 
   // -------------------Third table---------------------
   thirdTable: {
     display: "flex",
-    marginTop: 25,
+    marginTop: 15,
     flexDirection: "row",
     textAlign: "center",
   },
@@ -144,13 +149,13 @@ export const styles = StyleSheet.create({
   },
 
   orNumber: {
-    marginTop: 10,
-    paddingBottom: 15,
-    width: "25%",
+    width: "100%",
     display: "flex",
+    flexWrap: "nowrap",
     // gap: 10,
     textAlign: "left",
     fontSize: 8,
+    // height: 50,
   },
 
   thirdTableLabel: {

@@ -180,6 +180,10 @@ export const zoningClassification = [
   "Creek",
   "Cliff",
   "Tourism",
+  "Gasoline Station",
+  "Agri Industrial",
+  "Surplus Display",
+  "Commercial Building",
 ];
 
 export const legalBasis = [
@@ -190,12 +194,12 @@ export const legalBasis = [
 export const inspector = [
   {
     id: 1,
-    name: "Mario. P. Cabigas",
+    name: "MARIO P. CABIGAS",
     position: "Admin. Asst. II / Zoning Inspector Designate",
   },
   {
     id: 2,
-    name: "Erwin C. Bacalso",
+    name: "ERWIN C. BACALSO",
     position: "Administrative Aide IV",
   },
 ];
