@@ -59,7 +59,7 @@ const Button = styled.button`
 `;
 
 function Reports() {
-  const [orders, setOrders] = useState([]);
+  const [records, setRecords] = useState([]);
   const [startDate, setStartDate] = useState("");
   const [endDate, setEndDate] = useState("");
   const [barangay, setBarangay] = useState("");
@@ -73,18 +73,20 @@ function Reports() {
   const fetchOrders = async () => {
     if (!startDate || !endDate) return;
 
-    const { data, error } = await supabase
+    const { data, isLoading, error } = await supabase
       .from("businesspermit")
       .select("*")
       .gte("date", startDate)
       .lte("date", endDate)
       .eq("barangay", barangay); // Less than or equal to end date
 
+    if (isLoading) return <p>Loading...</p>;
+
     if (error) {
       console.error("Error fetching orders:", error);
     } else {
-      // setOrders(data);
-      console.log(data);
+      setRecords(data);
+      // console.log(data);
     }
   };
 
@@ -116,12 +118,13 @@ function Reports() {
         </Select>
         <Button onClick={handleSubmit}>Generate</Button>
       </ReportWrapper>
+
       <PDFViewer style={reportStyles.size}>
         <Document>
           <Page size="Folio" style={reportStyles.page}>
-            <Generic />
-            <BusinessType />
-            <ZoningClassification />
+            <Generic record={records} selectedbar={barangay} />
+            <BusinessType record={records} selectedbar={barangay} />
+            <ZoningClassification record={records} selectedbar={barangay} />
           </Page>
         </Document>
       </PDFViewer>
