@@ -344,6 +344,7 @@ function Registration(e) {
           </select>
           <input
             type="text"
+            placeholder="Decision Number"
             {...register("decisionNumber", { required: true })}
             // value={`CZC-07-${new Date().getFullYear()}-${lastElement?.id + 1}
             onChange={(e) => setValue("decisionNumber", e.target.value)}

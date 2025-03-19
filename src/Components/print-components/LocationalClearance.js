@@ -29,7 +29,7 @@ function LocationalClearance({ toPrint, props }) {
                 {`TAL-BUS-NEW-07-${new Date()
                   .getFullYear()
                   .toString()
-                  .slice(2, 4)}-${toPrint.id}`}
+                  .slice(2, 4)}-${toPrint.decisionNumber}`}
               </Text>
               <Text style={styles.tdLabel}>Decision Number:</Text>
               <Text style={styles.tdValue}>

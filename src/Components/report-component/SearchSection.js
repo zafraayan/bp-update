@@ -1,7 +1,12 @@
 import React from "react";
 
 function SearchSection() {
-  return <div>Search Section</div>;
+  return (
+    <>
+      <input type="date"></input>
+      <input type="date"></input>
+    </>
+  );
 }
 
 export default SearchSection;
