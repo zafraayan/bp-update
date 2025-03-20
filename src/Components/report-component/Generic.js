@@ -29,6 +29,7 @@ function Generic({ record, selectedbar }) {
 
   return (
     <>
+      <Text style={reportStyles.topLabel}>Report Summary</Text>
       <Text style={reportStyles.headingLabel}>Barangay {selectedbar}</Text>
       <View style={reportStyles.genericWrapper}>
         <Text style={reportStyles.header}>Total Applicants</Text>

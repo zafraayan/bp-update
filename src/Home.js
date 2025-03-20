@@ -37,6 +37,7 @@ const SidebarWrapper = styled.div`
 
 const MainWrapper = styled.div`
   width: 100%;
+  overflow: auto;
   text-align: center;
   padding: 10px;
 `;

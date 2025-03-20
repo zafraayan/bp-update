@@ -16,10 +16,19 @@ import styled from "styled-components";
 import { barangay as bar } from "../Sidebar/array/arrays";
 import { supabase } from "../database/supabase";
 import { data } from "react-router";
+import Header from "./print-components/Header";
+import { formatDate } from "../helpers/formatDate";
 
 const ReportWrapper = styled.div`
   display: "flex";
-  gap: 50px;
+  width: 80%;
+  margin: auto;
+  background-color: black;
+  border-radius: 10px;
+  padding: 10px;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 10px;
 `;
 
 const Input = styled.input`
@@ -30,6 +39,9 @@ const Input = styled.input`
   font-size: 12;
   border-radius: 5px;
   margin-bottom: 5px;
+  width: 30%;
+  margin-left: 10px;
+  margin-right: 10px;
 `;
 
 const Select = styled.select`
@@ -40,6 +52,9 @@ const Select = styled.select`
   font-size: 12;
   border-radius: 5px;
   margin-bottom: 5px;
+  width: 30%;
+  margin-left: 10px;
+  margin-right: 10px;
 `;
 
 const Button = styled.button`
@@ -51,11 +66,19 @@ const Button = styled.button`
   border-radius: 5px;
   margin-bottom: 5px;
   cursor: pointer;
+  width: 30%;
 
   &:hover {
-    background-color: black;
+    margin-left: 10px;
+    margin-right: 10px;
+    background-color: #a9cec2;
     color: white;
   }
+`;
+
+const SearchHeading = styled.div`
+  font-size: 20px;
+  margin-bottom: 10px;
 `;
 
 function Reports() {
@@ -63,12 +86,6 @@ function Reports() {
   const [startDate, setStartDate] = useState("");
   const [endDate, setEndDate] = useState("");
   const [barangay, setBarangay] = useState("");
-
-  // useEffect(() => {
-  //   if (startDate && endDate) {
-  //     fetchOrders();
-  //   }
-  // }, [startDate, endDate]);
 
   const fetchOrders = async () => {
     if (!startDate || !endDate) return;
@@ -97,10 +114,10 @@ function Reports() {
   return (
     <>
       <ReportWrapper>
-        <label>From</label>
-        <label>To</label>
-      </ReportWrapper>
-      <ReportWrapper>
+        <SearchHeading>
+          Enter the date range and barangay to generate report
+        </SearchHeading>
+
         <Input
           type="date"
           value={startDate}
@@ -119,15 +136,28 @@ function Reports() {
         <Button onClick={handleSubmit}>Generate</Button>
       </ReportWrapper>
 
-      <PDFViewer style={reportStyles.size}>
-        <Document>
-          <Page size="Folio" style={reportStyles.page}>
-            <Generic record={records} selectedbar={barangay} />
-            <BusinessType record={records} selectedbar={barangay} />
-            <ZoningClassification record={records} selectedbar={barangay} />
-          </Page>
-        </Document>
-      </PDFViewer>
+      {records.length > 0 ? (
+        <PDFViewer style={reportStyles.size}>
+          <Document>
+            <Page size="Folio" style={reportStyles.page}>
+              <Header />
+              <Generic record={records} selectedbar={barangay} />
+              <BusinessType record={records} selectedbar={barangay} />
+              <ZoningClassification record={records} selectedbar={barangay} />
+
+              <View style={reportStyles.footer}>
+                <Text>{`Source: Permit Flow System (City Planning and Development Coordinator)`}</Text>
+                <Text>{`Date Generated: ${new Date().getMonth()}/${new Date().getDate()}/${new Date().getFullYear()}`}</Text>
+                <Text>{`Date Range Requested: ${formatDate(
+                  startDate
+                )} - ${formatDate(endDate)}`}</Text>
+              </View>
+            </Page>
+          </Document>
+        </PDFViewer>
+      ) : (
+        "No data found"
+      )}
     </>
   );
 }

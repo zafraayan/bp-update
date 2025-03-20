@@ -2,7 +2,7 @@ import { StyleSheet } from "@react-pdf/renderer";
 
 export const reportStyles = StyleSheet.create({
   size: {
-    width: "100%",
+    width: "80%",
     height: "100%",
   },
 
@@ -11,6 +11,7 @@ export const reportStyles = StyleSheet.create({
     // flexDirection: "row",
     fontSize: "11px",
     width: "100%",
+    height: "100%",
     padding: "20px",
     textAlign: "center",
   },
@@ -41,7 +42,26 @@ export const reportStyles = StyleSheet.create({
     fontSize: 9,
   },
 
+  topLabel: {
+    fontSize: 30,
+    marginTop: 10,
+    marginBottom: 10,
+    backgroundColor: "gray",
+    color: "white",
+    padding: 10,
+  },
+
   headingLabel: {
     fontSize: 20,
+    marginTop: 10,
+    marginBottom: 10,
+  },
+
+  footer: {
+    display: "flex",
+    flexDirection: "column",
+    marginTop: 10,
+    marginBottom: 10,
+    fontSize: 8,
   },
 });
