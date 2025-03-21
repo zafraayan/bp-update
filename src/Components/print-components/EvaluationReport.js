@@ -4,6 +4,7 @@ import { View, Text, Image } from "@react-pdf/renderer";
 import "./evaluationStyle";
 import { styles } from "./evaluationStyle";
 import box from "../../images/box.png";
+import shaded from "../../images/shaded.png";
 import { formatDate } from "../../helpers/formatDate";
 import { inspector } from "../../Sidebar/array/arrays";
 
@@ -62,49 +63,64 @@ function EvaluationReport({ toPrint }) {
         <View style={styles.fullWidth}>
           <Text> List of Requirements Attached (if applicable) </Text>
           <View style={styles.requirements}>
-            <Image style={styles.box} src={box}></Image>
+            <Image style={styles.box} src={toPrint?.bbc ? shaded : box}></Image>
             <Text>Barangay Business Clearance</Text>
           </View>
           <View style={styles.requirements}>
-            <Image style={styles.box} src={box}></Image>
+            <Image style={styles.box} src={toPrint?.bcr ? shaded : box}></Image>
             <Text>Barangay Council Resolution</Text>
           </View>
           <View style={styles.requirements}>
-            <Image style={styles.box} src={box}></Image>
+            <Image style={styles.box} src={toPrint?.tct ? shaded : box}></Image>
             <Text>Transfer Certificate of Title</Text>
           </View>
           <View style={styles.requirements}>
-            <Image style={styles.box} src={box}></Image>
+            <Image
+              style={styles.box}
+              src={toPrint?.tdrp ? shaded : box}
+            ></Image>
             <Text>Tax Declaration of Real Property</Text>
           </View>
           <View style={styles.requirements}>
-            <Image style={styles.box} src={box}></Image>
+            <Image style={styles.box} src={toPrint?.cl ? shaded : box}></Image>
             <Text>Contract of Lease</Text>
           </View>
           <View style={styles.requirements}>
-            <Image style={styles.box} src={box}></Image>
+            <Image
+              style={styles.box}
+              src={toPrint?.cbnr ? shaded : box}
+            ></Image>
             <Text>Certificate of Business Name Registration</Text>
           </View>
           <View style={styles.requirements}>
-            <Image style={styles.box} src={box}></Image>
+            <Image style={styles.box} src={toPrint?.cis ? shaded : box}></Image>
             <Text>Certificate of Incorporation from SEC</Text>
           </View>
           <View style={styles.requirements}>
-            <Image style={styles.box} src={box}></Image>
+            <Image
+              style={styles.box}
+              src={toPrint?.calo ? shaded : box}
+            ></Image>
             <Text>Const and Authority from Lot Owner</Text>
           </View>
           <View style={styles.requirements}>
-            <Image style={styles.box} src={box}></Image>
+            <Image
+              style={styles.box}
+              src={toPrint?.capha ? shaded : box}
+            ></Image>
             <Text>
               Consent and Authority from President of Homeowners Associations
             </Text>
           </View>
           <View style={styles.requirements}>
-            <Image style={styles.box} src={box}></Image>
+            <Image style={styles.box} src={toPrint?.ano ? shaded : box}></Image>
             <Text>Affidavit of No-Objectives</Text>
           </View>
           <View style={styles.requirements}>
-            <Image style={styles.box} src={box}></Image>
+            <Image
+              style={styles.box}
+              src={toPrint?.others ? shaded : box}
+            ></Image>
             <Text>Others: (Ex. DENR Clearance & DOLE Clearance)</Text>
           </View>
         </View>

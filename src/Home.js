@@ -88,7 +88,7 @@ function Home() {
           <HeaderWrapper></HeaderWrapper>
           <BodyWrapper>
             {comps}
-            {/* <BpRecords /> */}
+            {/* <Registration /> */}
           </BodyWrapper>
 
           {/* <FooterWrapper>Footer</FooterWrapper> */}

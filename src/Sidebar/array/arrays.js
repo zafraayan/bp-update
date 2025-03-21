@@ -320,4 +320,89 @@ export const errorMessage = [
     name: "decisionNumber",
     message: "Invalid Decision Number",
   },
+  {
+    id: 24,
+    name: "remark",
+    message: "Invalid Remarks",
+  },
+];
+
+export const remarks = [
+  {
+    id: 1,
+    remark: "Conforming",
+  },
+  {
+    id: 2,
+    remark: "Non-Conforming",
+  },
+];
+
+export const requirements = [
+  {
+    id: 1,
+    fields: "bbc",
+    title: "Barangay Business Clearance",
+    isActive: true,
+  },
+  {
+    id: 2,
+    fields: "bcr",
+    title: "Barangay Council Resolution",
+    isActive: true,
+  },
+  {
+    id: 3,
+    fields: "tct",
+    title: "Transfer Certificate of Title",
+    isActive: true,
+  },
+  {
+    id: 4,
+    fields: "tdrp",
+    title: "Tax Declaration of Real Property",
+    isActive: true,
+  },
+  {
+    id: 5,
+    fields: "cl",
+    title: "Contract of Lease",
+    isActive: true,
+  },
+  {
+    id: 6,
+    fields: "cbnr",
+    title: "Certificate of Business Name Registration",
+    isActive: true,
+  },
+  {
+    id: 7,
+    fields: "cis",
+    title: "Certificate of Incorporation from SEC",
+    isActive: true,
+  },
+  {
+    id: 8,
+    fields: "calo",
+    title: "Consent and Authority from Lot Owner",
+    isActive: true,
+  },
+  {
+    id: 9,
+    fields: "capha",
+    title: "Consent and Authority from President of Homeowners Associations",
+    isActive: true,
+  },
+  {
+    id: 10,
+    fields: "ano",
+    title: "Affidavit of No-Objectives",
+    isActive: true,
+  },
+  {
+    id: 11,
+    fields: "others",
+    title: "Others for Example DENR Clearance & DOLE Clearance",
+    isActive: true,
+  },
 ];

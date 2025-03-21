@@ -17,6 +17,7 @@ import {
 } from "../../Sidebar/array/arrays";
 import Error from "../Error";
 import { formatNumber } from "../../helpers/formatNumber";
+import Requirements from "../registration-components/Requirements";
 
 const RegistrationWrapper = styled.div`
   display: flex;
@@ -353,6 +354,7 @@ function Edit({ selected }) {
             ))}
           </select>
         </RegistrationWrapper>
+        {/* <Requirements reg={register} /> */}
         <ButtonStyle
           title="Complete the fields to submit entry"
           disability={disable}

@@ -35,7 +35,7 @@ function BusinessType({ record, selectedbar }) {
 
   return (
     <>
-      <Text style={reportStyles.headingLabel}>Business Type</Text>
+      <Text style={reportStyles.headingLabel}>Zoning Classification</Text>
       <View style={reportStyles.genericWrapper}>
         <Text style={reportStyles.header}>Zoning Classification</Text>
         <Text style={reportStyles.header}>Total Applicants</Text>

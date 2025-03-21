@@ -7,6 +7,7 @@ import {
   inspector,
   legalBasis,
   production,
+  remarks,
   zoningClassification,
 } from "../Sidebar/array/arrays";
 import Misc from "../buttons/Misc";
@@ -17,6 +18,7 @@ import Crud from "../database/Crud";
 import { useDispatch, useSelector } from "react-redux";
 import { setDisable } from "../businessSlice";
 import { formatNumber } from "../helpers/formatNumber";
+import Requirements from "./registration-components/Requirements";
 
 const RegistrationWrapper = styled.div`
   display: flex;
@@ -351,6 +353,13 @@ function Registration(e) {
             value={decNumber}
             // style={{ pointerEvents: "none", color: "gray" }}
           ></input>
+
+          <select {...register("remark")}>
+            {remarks.map((el, i) => (
+              <option key={i}>{el.remark}</option>
+            ))}
+          </select>
+          <Requirements reg={register} />
         </RegistrationWrapper>
         <ButtonStyle
           title="Complete the fields to submit entry"
