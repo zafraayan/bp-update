@@ -362,7 +362,10 @@ function Edit({ selected }) {
         >
           UPDATE
         </ButtonStyle>
-        <Note>Complete all the fields to enable the submit button</Note>
+        <Note>
+          If you desire to edit the requirements submitted. Delete the record
+          and register again.
+        </Note>
         <Toaster position="bottom-center" style={{ zIndex: "1" }} />
         {errorMessage.map(
           (el) =>

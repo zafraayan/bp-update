@@ -178,10 +178,20 @@ function BpRecords() {
   const [isClient, setIsClient] = useState(false);
   const [asData, setAsData] = useState();
   const [dataReady, setDataReady] = useState(false);
+  const [searchKey, setSearchKey] = useState();
+  const [searchValue, setSearchValue] = useState();
 
   useEffect(() => {
     setIsClient(true); // Ensures rendering happens after the component mounts
   }, []);
+
+  function handleChange(e) {
+    const searchRecord = records.filter((el) =>
+      el.busName.toLowerCase().includes(e.target.value.toLowerCase())
+    );
+    setSearchKey(e.target.value);
+    setSearchValue(searchRecord);
+  }
 
   function handleEdit(id) {
     dispatch(setEditPopup({ state: true }));
@@ -219,8 +229,12 @@ function BpRecords() {
       <RecordWrapper>
         <h1>Records</h1>
         <Search>
-          <ButtonStyle>Search</ButtonStyle>
-          <input type="text" placeholder="Search...."></input>
+          {/* <ButtonStyle>Search</ButtonStyle> */}
+          <input
+            type="text"
+            onChange={handleChange}
+            placeholder="Search...."
+          ></input>
         </Search>
         <Data>
           <Table>
@@ -234,50 +248,82 @@ function BpRecords() {
                 <th>Legal Basis</th>
                 <th>Actions</th>
               </tr>
-              {currentItems?.map((el) => (
-                <tr key={el.id}>
-                  {/* <td>{`${el.fName} ${el.mName} ${el.lName}`}</td> */}
-                  <td>{el.busName}</td>
-                  <td>{el.barangay}</td>
-                  <td>{el.busType}</td>
-                  <td>{el.zonClassification}</td>
-                  <td>{el.legalBasis}</td>
-                  {/* <td>{el.inspector}</td> */}
-                  <Icons>
-                    <span title="Edit" onClick={() => handleEdit(el.id)}>
-                      <FaEdit />
-                    </span>
+              {searchKey
+                ? searchValue?.map((el) => (
+                    <tr key={el.id}>
+                      {/* <td>{`${el.fName} ${el.mName} ${el.lName}`}</td> */}
+                      <td>{el.busName}</td>
+                      <td>{el.barangay}</td>
+                      <td>{el.busType}</td>
+                      <td>{el.zonClassification}</td>
+                      <td>{el.legalBasis}</td>
+                      {/* <td>{el.inspector}</td> */}
+                      <Icons>
+                        <span title="Edit" onClick={() => handleEdit(el.id)}>
+                          <FaEdit />
+                        </span>
 
-                    <span title="Delete" onClick={() => handleDelete(el.id)}>
-                      <FaDeleteLeft />
-                    </span>
-                    <span title="Print" onClick={() => handlePrint(el.id)}>
-                      <FaPrint />
-                    </span>
-                  </Icons>
-                </tr>
-              ))}
+                        <span
+                          title="Delete"
+                          onClick={() => handleDelete(el.id)}
+                        >
+                          <FaDeleteLeft />
+                        </span>
+                        <span title="Print" onClick={() => handlePrint(el.id)}>
+                          <FaPrint />
+                        </span>
+                      </Icons>
+                    </tr>
+                  ))
+                : currentItems?.map((el) => (
+                    <tr key={el.id}>
+                      {/* <td>{`${el.fName} ${el.mName} ${el.lName}`}</td> */}
+                      <td>{el.busName}</td>
+                      <td>{el.barangay}</td>
+                      <td>{el.busType}</td>
+                      <td>{el.zonClassification}</td>
+                      <td>{el.legalBasis}</td>
+                      {/* <td>{el.inspector}</td> */}
+                      <Icons>
+                        <span title="Edit" onClick={() => handleEdit(el.id)}>
+                          <FaEdit />
+                        </span>
+
+                        <span
+                          title="Delete"
+                          onClick={() => handleDelete(el.id)}
+                        >
+                          <FaDeleteLeft />
+                        </span>
+                        <span title="Print" onClick={() => handlePrint(el.id)}>
+                          <FaPrint />
+                        </span>
+                      </Icons>
+                    </tr>
+                  ))}
             </tbody>
           </Table>
         </Data>
       </RecordWrapper>
-      <Pagination>
-        <ButtonStyle
-          onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
-          disabled={currentPage === 1}
-        >
-          Prev
-        </ButtonStyle>
-        <span>{`Page ${currentPage} of ${totalPages}`}</span>
-        <ButtonStyle
-          onClick={() =>
-            setCurrentPage((prev) => Math.min(prev + 1, totalPages))
-          }
-          disabled={currentPage === totalPages}
-        >
-          Next
-        </ButtonStyle>
-      </Pagination>
+      {searchValue?.length > 0 || (
+        <Pagination>
+          <ButtonStyle
+            onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
+            disabled={currentPage === 1}
+          >
+            Prev
+          </ButtonStyle>
+          <span>{`Page ${currentPage} of ${totalPages}`}</span>
+          <ButtonStyle
+            onClick={() =>
+              setCurrentPage((prev) => Math.min(prev + 1, totalPages))
+            }
+            disabled={currentPage === totalPages}
+          >
+            Next
+          </ButtonStyle>
+        </Pagination>
+      )}
     </>
   );
 }
