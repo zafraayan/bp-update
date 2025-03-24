@@ -233,7 +233,7 @@ function BpRecords() {
           <input
             type="text"
             onChange={handleChange}
-            placeholder="Search...."
+            placeholder="Search by business name...."
           ></input>
         </Search>
         <Data>
@@ -305,7 +305,7 @@ function BpRecords() {
           </Table>
         </Data>
       </RecordWrapper>
-      {searchValue?.length > 0 || (
+      {!searchKey && (
         <Pagination>
           <ButtonStyle
             onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
