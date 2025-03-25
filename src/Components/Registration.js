@@ -223,10 +223,7 @@ function Registration(e) {
           <input
             type="number"
             placeholder="Contact Number"
-            {...register("cNumber", {
-              required: true,
-              min: { value: 1 },
-            })}
+            {...register("cNumber")}
           ></input>
 
           <select {...register("decision")}>
@@ -328,7 +325,7 @@ function Registration(e) {
           <input
             type="text"
             placeholder="OR Number"
-            {...register("orNumber", { required: true })}
+            {...register("orNumber")}
           ></input>
           <input
             type="date"

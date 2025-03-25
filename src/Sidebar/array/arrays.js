@@ -52,15 +52,15 @@ export const navItems = [
         path: "",
         component: <Reports />,
       },
-      // {
-      //   id: "4",
-      //   title: "Print / Download",
-      //   icon: <FaPrint />,
-      //   path: "",
-      //   component: <PrintDownload />,
-      // },
       {
         id: 4,
+        title: "Print / Download",
+        icon: <FaPrint />,
+        path: "",
+        component: <PrintDownload />,
+      },
+      {
+        id: 5,
         title: "Settings",
         icon: <IoMdSettings />,
         path: "",

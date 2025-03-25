@@ -1,36 +1,43 @@
 import React from "react";
-import {
-  MapContainer,
-  TileLayer,
-  Marker,
-  Popup,
-  GeoJSON,
-  Polygon,
-} from "react-leaflet";
+import { MapContainer, TileLayer, GeoJSON } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
+import { myjson } from "../../test/land-use";
 
-const polygonCoords = [
-  [40.7128, -74.006], // Point 1 (New York)
-  [40.73061, -73.9352], // Point 2
-  [40.741, -73.98], // Point 3
-  [40.72, -74.02], // Point 4
-  [40.7128, -74.006], // Closing the polygon (same as first point)
-];
+// const geojsonData = {
+//   type: "FeatureCollection",
+//   features: [
+//     {
+//       type: "Feature",
+//       properties: { name: "My Area" },
+//       geometry: {
+//         type: "Polygon",
+//         coordinates: [
+//           [
+//             [-0.1276, 51.5074], // London
+//             [-0.127, 51.5078],
+//             [-0.1265, 51.5074],
+//             [-0.1276, 51.5074], // Closing the polygon
+//           ],
+//         ],
+//       },
+//     },
+//   ],
+// };
 
-function ZoningCertificate() {
+const ZoningCertificate = () => {
   return (
     <MapContainer
-      center={[40.7128, -74.006]}
-      zoom={11}
+      center={[10.253606684935717, 123.82942553200422]}
+      zoom={13}
       style={{ height: "500px", width: "100%" }}
     >
+      {/* Base Map */}
       <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
-      <Polygon
-        pathOptions={{ color: "blue", fillOpacity: 0.3 }}
-        positions={polygonCoords}
-      />
+
+      {/* GeoJSON Layer */}
+      <GeoJSON data={myjson} />
     </MapContainer>
   );
-}
+};
 
 export default ZoningCertificate;
