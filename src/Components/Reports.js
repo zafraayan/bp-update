@@ -87,15 +87,22 @@ function Reports() {
   const [endDate, setEndDate] = useState("");
   const [barangay, setBarangay] = useState("");
 
+  const CONST = "City";
+
   const fetchOrders = async () => {
     if (!startDate || !endDate) return;
 
-    const { data, isLoading, error } = await supabase
+    let query = supabase
       .from("businesspermit")
       .select("*")
       .gte("date", startDate)
-      .lte("date", endDate)
-      .eq("barangay", barangay); // Less than or equal to end date
+      .lte("date", endDate);
+
+    if (barangay !== CONST) {
+      query = query.eq("barangay", barangay); //this will add at the end of query variable
+    }
+
+    const { data, isLoading, error } = await query;
 
     if (isLoading) return <p>Loading...</p>;
 
@@ -103,7 +110,6 @@ function Reports() {
       console.error("Error fetching orders:", error);
     } else {
       setRecords(data);
-      // console.log(data);
     }
   };
 
@@ -134,6 +140,9 @@ function Reports() {
           ))}
         </Select>
         <Button onClick={handleSubmit}>Generate</Button>
+        <div style={{ fontSize: "10px", fontStyle: "italic" }}>
+          Note: Always click generate when you change the search query.
+        </div>
       </ReportWrapper>
 
       {records.length > 0 ? (

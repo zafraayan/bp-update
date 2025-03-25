@@ -143,6 +143,7 @@ export const barangay = [
   "Camp IV",
   "Lawaan II",
   "Lawaan III",
+  "City",
 ];
 
 export const production = [
