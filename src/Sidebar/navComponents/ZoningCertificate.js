@@ -1,41 +1,55 @@
-import React from "react";
+import { useState, useEffect } from "react";
 import { MapContainer, TileLayer, GeoJSON } from "react-leaflet";
-import "leaflet/dist/leaflet.css";
-import { myjson } from "../../test/land-use";
-
-// const geojsonData = {
-//   type: "FeatureCollection",
-//   features: [
-//     {
-//       type: "Feature",
-//       properties: { name: "My Area" },
-//       geometry: {
-//         type: "Polygon",
-//         coordinates: [
-//           [
-//             [-0.1276, 51.5074], // London
-//             [-0.127, 51.5078],
-//             [-0.1265, 51.5074],
-//             [-0.1276, 51.5074], // Closing the polygon
-//           ],
-//         ],
-//       },
-//     },
-//   ],
-// };
+import "leaflet/dist/leaflet.css"; // Ensure Leaflet CSS is loaded
 
 const ZoningCertificate = () => {
+  const [geojsonData, setGeojsonData] = useState(null);
+
+  useEffect(() => {
+    const fetchGeoJSON = async () => {
+      try {
+        const response = await fetch("/test.geojson"); // Make sure it's in `public/`
+        if (!response.ok) throw new Error("Failed to fetch GeoJSON");
+
+        const data = await response.json();
+        setGeojsonData(data);
+      } catch (error) {
+        console.error("Error loading GeoJSON:", error);
+      }
+    };
+
+    fetchGeoJSON();
+  }, []);
+
+  // Custom styling for GeoJSON features
+  const geoJsonStyle = {
+    color: "white", // Border color
+    weight: 1,
+    fillColor: "black", // Fill color
+    fillOpacity: 1,
+  };
+
+  // Function to add popups on each feature
+  const onEachFeature = (feature, layer) => {
+    if (feature.properties && feature.properties.name) {
+      layer.bindPopup(`<b>${feature.properties.name}</b>`);
+    }
+  };
+
   return (
     <MapContainer
-      center={[10.253606684935717, 123.82942553200422]}
-      zoom={13}
-      style={{ height: "500px", width: "100%" }}
+      center={[10.253670370704874, 123.82930260780415]}
+      zoom={12}
+      style={{ height: "100vh", width: "100%" }}
     >
-      {/* Base Map */}
       <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
-
-      {/* GeoJSON Layer */}
-      <GeoJSON data={myjson} />
+      {geojsonData && (
+        <GeoJSON
+          data={geojsonData}
+          style={geoJsonStyle}
+          onEachFeature={onEachFeature}
+        />
+      )}
     </MapContainer>
   );
 };
