@@ -24,9 +24,12 @@ function Crud() {
         const { data, error } = await supabase
           .from("businesspermit")
           .insert([newItem]);
-        if (error) console.log(error);
-        toast.success("Successfully Added!");
-        reset();
+        if (error) {
+          toast.error("There is an error");
+        } else {
+          toast.success("Successfully Added!");
+          reset();
+        }
       },
       onSuccess: () => {
         queryClient.invalidateQueries(["businesspermit"]);

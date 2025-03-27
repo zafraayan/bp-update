@@ -213,9 +213,8 @@ function BpRecords() {
   const totalPages = Math.ceil(records?.length / itemsPerPage);
   const startIndex = (currentPage - 1) * itemsPerPage;
   const currentItems = records
-    ?.slice(startIndex, startIndex + itemsPerPage)
-    .sort((a, b) => a.id - b.id);
-
+    .sort((a, b) => b.id - a.id)
+    ?.slice(startIndex, startIndex + itemsPerPage);
   if (isLoading) return <p>Loading...</p>;
   if (error) console.log(error);
 

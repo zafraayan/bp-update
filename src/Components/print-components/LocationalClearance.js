@@ -197,7 +197,12 @@ function LocationalClearance({ toPrint, props }) {
               </View>
 
               <View style={styles.orNumber}>
-                <Text>Or #: {toPrint?.orNumber}</Text>
+                <Text>
+                  Or #:{" "}
+                  {toPrint?.orNumber === 0
+                    ? toPrint?.orNumber
+                    : "Not Specified"}
+                </Text>
                 <Text>Date Issued: {formatDate(toPrint?.orDate)}</Text>
                 <Text>Amount Paid: {toPrint?.amountPaid}</Text>
               </View>

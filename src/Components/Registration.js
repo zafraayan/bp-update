@@ -142,6 +142,7 @@ function Registration(e) {
 
   const capital = watch("busCapital", "");
   const decNumber = watch("decisionNumber", "");
+  const defNumber = watch("cNumber", "");
 
   useEffect(() => {
     zaf.length > 0
@@ -224,6 +225,8 @@ function Registration(e) {
             type="number"
             placeholder="Contact Number"
             {...register("cNumber")}
+            onBlur={(e) => setValue("cNumber", e.target.value || 0)}
+            value={defNumber}
           ></input>
 
           <select {...register("decision")}>
