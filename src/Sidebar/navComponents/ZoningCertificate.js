@@ -22,11 +22,15 @@ const ZoningCertificate = () => {
   }, []);
 
   // Custom styling for GeoJSON features
-  const geoJsonStyle = {
-    color: "white", // Border color
-    weight: 1,
-    fillColor: "black", // Fill color
-    fillOpacity: 1,
+  const getStyle = (feature) => {
+    const value = feature.properties.ZoneCode; // Change to your actual property name
+    return {
+      fillColor: value === "R1Z" ? "red" : "green", // Adjust logic as needed
+      weight: 1,
+      opacity: 1,
+      color: "white",
+      fillOpacity: 1,
+    };
   };
 
   // Function to add popups on each feature
@@ -34,6 +38,27 @@ const ZoningCertificate = () => {
     if (feature.properties && feature.properties.name) {
       layer.bindPopup(`<b>${feature.properties.name}</b>`);
     }
+
+    layer.on({
+      mouseover: (e) => {
+        const hoveredLayer = e.target;
+
+        layer.bindPopup(`<b>${feature.properties.zcode}</b>`).openPopup();
+        hoveredLayer.setStyle({
+          fillColor: "yellow", // Color on hover
+          fillOpacity: 0.9,
+          // weight: 3,
+          color: "black",
+        });
+      },
+      mouseout: (e) => {
+        const hoveredLayer = e.target;
+        hoveredLayer.setStyle(getStyle(feature)); // Reset to default style
+      },
+      click: (e) => {
+        layer.bindPopup(`<b>${feature.properties.ZoneCode}</b>`).openPopup();
+      },
+    });
   };
 
   return (
@@ -46,7 +71,7 @@ const ZoningCertificate = () => {
       {geojsonData && (
         <GeoJSON
           data={geojsonData}
-          style={geoJsonStyle}
+          style={getStyle}
           onEachFeature={onEachFeature}
         />
       )}
