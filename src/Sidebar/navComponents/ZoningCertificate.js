@@ -32,7 +32,7 @@ const ZoningCertificate = () => {
   const [showfeatures, setShowfeatures] = useState(true);
   const [mapview, setMapview] = useState(false);
   const [opacity, setOpacity] = useState(1);
-  const [opacityVal, setOapcityVal] = useState(1);
+  const [opacityVal, setOapcityVal] = useState(100);
   // const [streetmap, setStreetmap] = useState(false);
 
   useEffect(() => {
@@ -140,6 +140,7 @@ const ZoningCertificate = () => {
               value={opacityVal}
               onChange={handleOpacity}
             />
+            {`${opacityVal}% `}
           </div>
           {/* </form> */}
         </FormWrapper>
