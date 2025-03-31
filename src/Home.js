@@ -87,8 +87,8 @@ function Home() {
         <MainWrapper>
           <HeaderWrapper></HeaderWrapper>
           <BodyWrapper>
-            {comps}
-            {/* <Registration /> */}
+            {/* {comps} */}
+            <ZoningCertificate />
           </BodyWrapper>
 
           {/* <FooterWrapper>Footer</FooterWrapper> */}
