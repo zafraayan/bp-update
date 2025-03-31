@@ -21,13 +21,18 @@ const ZoningCertificate = () => {
     fetchGeoJSON();
   }, []);
 
-  // Custom styling for GeoJSON features
-  const geoJsonStyle = {
-    color: "white", // Border color
-    weight: 1,
-    fillColor: "black", // Fill color
-    fillOpacity: 1,
+  const getColor = (value) => {
+    return value > 100 ? "red" : value > 50 ? "orange" : "green";
   };
+
+  // Custom styling for GeoJSON features
+  const getStyle = (feature) => ({
+    fillColor: feature.properties.color, // Change to match actual property name
+    weight: 1,
+    opacity: 1,
+    color: "black",
+    fillOpacity: 1,
+  });
 
   // Function to add popups on each feature
   const onEachFeature = (feature, layer) => {
@@ -46,7 +51,7 @@ const ZoningCertificate = () => {
       {geojsonData && (
         <GeoJSON
           data={geojsonData}
-          style={geoJsonStyle}
+          style={getStyle}
           onEachFeature={onEachFeature}
         />
       )}

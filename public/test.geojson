@@ -1,6 +1,6 @@
 {
   "type": "FeatureCollection",
-  "name": "CLUP_2025",
+  "name": "test",
   "crs": {
     "type": "name",
     "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" }
@@ -14,7 +14,8 @@
         "ZoneCode": "C2/R5",
         "Zoning": "(Medium Density Mixed Dev't-2 Zone) !Commercial-2 / Residential-5 Zone",
         "zcode": "(Medium Density Mixed Dev't-2 Zone) Commercial-2 / Residential-5 Zone (C2/R5)",
-        "AreaSQM": null
+        "AreaSQM": 217.927,
+        "color": "#ffff00"
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -104,7 +105,8 @@
         "ZoneCode": "R1Z",
         "Zoning": "Residential-1 Zone",
         "zcode": "Residential-1 Zone (R1Z)",
-        "AreaSQM": null
+        "AreaSQM": 66.524,
+        "color": "#ffff00"
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -138,7 +140,8 @@
         "ZoneCode": "R1Z",
         "Zoning": "Residential-1 Zone",
         "zcode": "Residential-1 Zone (R1Z)",
-        "AreaSQM": null
+        "AreaSQM": 80.869,
+        "color": "#ffff00"
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -189,7 +192,8 @@
         "ZoneCode": "R2Z",
         "Zoning": "Residential-2 Zone",
         "zcode": "Residential-2 Zone (R2Z)",
-        "AreaSQM": null
+        "AreaSQM": 176.259,
+        "color": "#ffff00"
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -251,7 +255,8 @@
         "ZoneCode": "R3Z",
         "Zoning": "High-Density Residential-3 Zone",
         "zcode": "High-Density Residential-3 Zone (R3Z)",
-        "AreaSQM": null
+        "AreaSQM": 268.704,
+        "color": "#ffff00"
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -311,7 +316,8 @@
         "ZoneCode": "R3Z",
         "Zoning": "High-Density Residential-3 Zone",
         "zcode": "High-Density Residential-3 Zone (R3Z)",
-        "AreaSQM": null
+        "AreaSQM": 52.995,
+        "color": "#ffff00"
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -387,7 +393,8 @@
         "ZoneCode": "R3Z",
         "Zoning": "High-Density Residential-3 Zone",
         "zcode": "High-Density Residential-3 Zone (R3Z)",
-        "AreaSQM": null
+        "AreaSQM": 146.422,
+        "color": "#ffff00"
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -519,7 +526,8 @@
         "ZoneCode": "GC/GR",
         "Zoning": "(Low Density Mixed Dev't-1B Zone MD1B) !General Commercial / General Residential",
         "zcode": "(Low Density Mixed Dev't-1B Zone MD1B) General Commercial / General Residential (GC/GR)",
-        "AreaSQM": null
+        "AreaSQM": 89.011,
+        "color": "#ffff00"
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -586,7 +594,8 @@
         "ZoneCode": "GC/GR",
         "Zoning": "(Low Density Mixed Dev't-1B Zone MD1B) !General Commercial / General Residential",
         "zcode": "(Low Density Mixed Dev't-1B Zone MD1B) General Commercial / General Residential (GC/GR)",
-        "AreaSQM": null
+        "AreaSQM": 89.258,
+        "color": "#ffff00"
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -788,7 +797,8 @@
         "ZoneCode": "IZ",
         "Zoning": "Institutional Zone",
         "zcode": "Institutional Zone (IZ)",
-        "AreaSQM": null
+        "AreaSQM": 116.095,
+        "color": "#9600c8"
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -887,7 +897,8 @@
         "ZoneCode": "AgIndZ",
         "Zoning": "Agri-Industrial Zone",
         "zcode": "Agri-Industrial Zone (AgIndZ)",
-        "AreaSQM": null
+        "AreaSQM": 46.767,
+        "color": "#464dd7"
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -985,7 +996,8 @@
         "ZoneCode": "C2/R3",
         "Zoning": "(Low-Density Mixed Dev't-1A Zone) !Commercial-2 / Residential-3",
         "zcode": "(Low-Density Mixed Dev't-1A Zone) Commercial-2 / Residential-3 (C2/R3)",
-        "AreaSQM": null
+        "AreaSQM": 163.51,
+        "color": "#ffff00"
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -1126,7 +1138,8 @@
         "ZoneCode": "ETM-OZ",
         "Zoning": "Eco-Tourism Overlay Zone",
         "zcode": "Eco-Tourism Overlay Zone (ETM-OZ)",
-        "AreaSQM": null
+        "AreaSQM": 216.178,
+        "color": "#ff9900"
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -1235,7 +1248,8 @@
         "ZoneCode": "MD3/C3Z",
         "Zoning": "(High Density Mixed Dev't-3 Zone) !Commercial-3 Zone",
         "zcode": "(High Density Mixed Dev't-3 Zone) Commercial-3 Zone (MD3/C3Z)",
-        "AreaSQM": null
+        "AreaSQM": 216.601,
+        "color": "#ff0000"
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -1368,7 +1382,8 @@
         "ZoneCode": "AF-SZ",
         "Zoning": "Agro-Forestry Sub-Zone",
         "zcode": "Agro-Forestry Sub-Zone (AF-SZ)",
-        "AreaSQM": null
+        "AreaSQM": 155.152,
+        "color": "#464dd7"
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -1433,7 +1448,8 @@
         "ZoneCode": "AF-SZ",
         "Zoning": "Agro-Forestry Sub-Zone",
         "zcode": "Agro-Forestry Sub-Zone (AF-SZ)",
-        "AreaSQM": null
+        "AreaSQM": 45.682,
+        "color": "#464dd7"
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -1467,7 +1483,8 @@
         "ZoneCode": "PDA-SZ",
         "Zoning": "Production Agricultural Sub-Zone",
         "zcode": "Production Agricultural Sub-Zone (PDA-SZ)",
-        "AreaSQM": null
+        "AreaSQM": 26.304,
+        "color": "#009600"
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -1536,7 +1553,8 @@
         "ZoneCode": "C2Z",
         "Zoning": "Commercial-2 Zone",
         "zcode": "Commercial-2 Zone (C2Z)",
-        "AreaSQM": null
+        "AreaSQM": 49.92,
+        "color": "#ff0000"
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -1601,7 +1619,8 @@
         "ZoneCode": "TZ",
         "Zoning": "Tourism Zone",
         "zcode": "Tourism Zone (TZ)",
-        "AreaSQM": null
+        "AreaSQM": 23.765,
+        "color": "#ff9900"
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -1655,7 +1674,8 @@
         "ZoneCode": "IHZ",
         "Zoning": "Institutional Heritage Zone",
         "zcode": "Institutional Heritage Zone (IHZ)",
-        "AreaSQM": null
+        "AreaSQM": 28.052,
+        "color": "#82a2d9"
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -1716,7 +1736,8 @@
         "ZoneCode": "FR-SZ",
         "Zoning": "Forest Reserve Sub-Zone",
         "zcode": "Forest Reserve Sub-Zone (FR-SZ)",
-        "AreaSQM": null
+        "AreaSQM": 55.609,
+        "color": "#006400"
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -1745,7 +1766,8 @@
         "ZoneCode": "C3Z",
         "Zoning": "Commercial-3 Zone",
         "zcode": "Commercial-3 Zone (C3Z)",
-        "AreaSQM": null
+        "AreaSQM": 150.407,
+        "color": "#ff0000"
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -1915,7 +1937,8 @@
         "ZoneCode": "C3Z",
         "Zoning": "Commercial-3 Zone",
         "zcode": "Commercial-3 Zone (C3Z)",
-        "AreaSQM": null
+        "AreaSQM": 135.616,
+        "color": "#ff0000"
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -2029,7 +2052,8 @@
         "ZoneCode": "TZ",
         "Zoning": "Tourism Zone",
         "zcode": "Tourism Zone (TZ)",
-        "AreaSQM": null
+        "AreaSQM": 28.847,
+        "color": "#ff9900"
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -2081,7 +2105,8 @@
         "ZoneCode": "TZ",
         "Zoning": "Tourism Zone",
         "zcode": "Tourism Zone (TZ)",
-        "AreaSQM": null
+        "AreaSQM": 20.446,
+        "color": "#ff9900"
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -2148,7 +2173,8 @@
         "ZoneCode": "TZ",
         "Zoning": "Tourism Zone",
         "zcode": "Tourism Zone (TZ)",
-        "AreaSQM": null
+        "AreaSQM": 25.062,
+        "color": "#ff9900"
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -2236,7 +2262,8 @@
         "ZoneCode": "TZ",
         "Zoning": "Tourism Zone",
         "zcode": "Tourism Zone (TZ)",
-        "AreaSQM": null
+        "AreaSQM": 42.485,
+        "color": "#ff9900"
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -2337,7 +2364,8 @@
         "ZoneCode": "NSP-SZ",
         "Zoning": "NIPAS - Strict Protection Sub-zone",
         "zcode": "NIPAS - Strict Protection Sub-zone (NSP-SZ)",
-        "AreaSQM": null
+        "AreaSQM": 227.259,
+        "color": "#006400"
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -2451,7 +2479,8 @@
         "ZoneCode": "NSP-SZ",
         "Zoning": "NIPAS - Strict Protection Sub-zone",
         "zcode": "NIPAS - Strict Protection Sub-zone (NSP-SZ)",
-        "AreaSQM": null
+        "AreaSQM": 430.583,
+        "color": "#006400"
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -2574,7 +2603,8 @@
         "ZoneCode": "FR-SZ",
         "Zoning": "Forest Reserve Sub-Zone",
         "zcode": "Forest Reserve Sub-Zone (FR-SZ)",
-        "AreaSQM": null
+        "AreaSQM": 98.556,
+        "color": "#006400"
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -2733,7 +2763,8 @@
         "ZoneCode": "FR-SZ",
         "Zoning": "Forest Reserve Sub-Zone",
         "zcode": "Forest Reserve Sub-Zone (FR-SZ)",
-        "AreaSQM": null
+        "AreaSQM": 287.554,
+        "color": "#006400"
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -2811,7 +2842,8 @@
         "ZoneCode": "NSP-SZ",
         "Zoning": "NIPAS - Strict Protection Sub-zone",
         "zcode": "NIPAS - Strict Protection Sub-zone (NSP-SZ)",
-        "AreaSQM": null
+        "AreaSQM": 465.423,
+        "color": "#006400"
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -2866,7 +2898,8 @@
         "ZoneCode": "NSP-SZ",
         "Zoning": "NIPAS - Strict Protection Sub-zone",
         "zcode": "NIPAS - Strict Protection Sub-zone (NSP-SZ)",
-        "AreaSQM": null
+        "AreaSQM": 213.358,
+        "color": "#006400"
       },
       "geometry": {
         "type": "MultiPolygon",
