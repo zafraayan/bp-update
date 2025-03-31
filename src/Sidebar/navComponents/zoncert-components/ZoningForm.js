@@ -21,6 +21,11 @@ const Input = styled.input`
   text-align: center;
 `;
 
+const InputReadonly = styled(Input)`
+  pointer-events: none;
+  background-color: rgb(154, 158, 158);
+`;
+
 const Select = styled.select`
   font-family: "Inter", serif;
   width: 90%;
@@ -31,7 +36,25 @@ const Select = styled.select`
   text-align: center;
 `;
 
-function ZoningForm({ landuse }) {
+const Button = styled.button`
+  width: 30%;
+  height: 50px;
+  border-radius: 10px;
+  background-color: rgb(0, 0, 0);
+  color: white;
+  font-size: 24px;
+  place-content: center;
+  border: none;
+  /* margin-top: 20px; */
+
+  &:hover {
+    background-color: var(--bodyText);
+    color: black;
+    cursor: pointer;
+  }
+`;
+
+function ZoningForm({ landuse, markerPosition }) {
   return (
     <ZoningFormWrapper>
       <Input type="date"></Input>
@@ -40,18 +63,26 @@ function ZoningForm({ landuse }) {
           <option key={i}>{el}</option>
         ))}
       </Select>
-      <Input type="text" placeholder="Area"></Input>
+      <Input type="number" placeholder="Area"></Input>
       <Input type="text" placeholder="Last Name"></Input>
       <Input type="text" placeholder="First Name"></Input>
       <Input type="text" placeholder="Middle Name"></Input>
       <Input type="text" placeholder="Lot Number"></Input>
       <Input type="text" placeholder="TCT Number"></Input>
       <Input type="number" placeholder="Area in hectares"></Input>
-      <Input
+      <InputReadonly
         type="text"
         placeholder="Zoning Classification"
         value={landuse}
-      ></Input>
+      ></InputReadonly>
+      <InputReadonly
+        type="text"
+        placeholder="Coordinates"
+        value={`${markerPosition.lat.toFixed(5)}, ${markerPosition.lng.toFixed(
+          5
+        )}`}
+      ></InputReadonly>
+      <Button>Save</Button>
     </ZoningFormWrapper>
   );
 }
