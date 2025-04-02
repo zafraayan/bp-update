@@ -16,6 +16,7 @@ import BpRecords from "./Components/BpRecords.js";
 import Reports from "./Components/Reports.js";
 import { NavContext } from "./context/context.js";
 import ZoningCertificate from "./Sidebar/navComponents/ZoningCertificate.js";
+import GenerateCertificate from "./Sidebar/navComponents/zoncert-components/GenerateCertificate.js";
 
 const Wrapper = styled.div`
   display: flex;
@@ -87,8 +88,8 @@ function Home() {
         <MainWrapper>
           <HeaderWrapper></HeaderWrapper>
           <BodyWrapper>
-            {comps}
-            {/* <ZoningCertificate /> */}
+            {/* {comps} */}
+            <GenerateCertificate />
           </BodyWrapper>
 
           {/* <FooterWrapper>Footer</FooterWrapper> */}

@@ -14,6 +14,7 @@ import styled from "styled-components";
 import L from "leaflet";
 import markerIcon from "leaflet/dist/images/marker-icon.png";
 import { CgCloseR } from "react-icons/cg";
+import { regulations } from "../array/arrays";
 
 const ZcWrapper = styled.div`
   display: flex;
@@ -227,7 +228,6 @@ const ZoningCertificate = () => {
           </form>
         </FormWrapper>
       )}
-
       <MapWrapper center={[10.288613081875678, 123.81768171707611]} zoom={13}>
         <ClickHandler />
         {showmap && (
