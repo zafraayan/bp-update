@@ -12,8 +12,10 @@ export const zoncertstyles = StyleSheet.create({
     // flexDirection: "row",
     fontSize: "11px",
     width: "100%",
+    // padding: 30,
     paddingTop: 30,
-    paddingBottom: 30,
+    // paddingBottom: 48,
+    paddingBottom: 48,
     paddingLeft: 30,
     paddingRight: 30,
     textAlign: "center",
@@ -30,7 +32,6 @@ export const zoncertstyles = StyleSheet.create({
     textAlign: "justify",
     paddingTop: 10,
     paddingBottom: 10,
-    wordWrap: "break-word",
   },
 
   /////////////////////////////////////////////////////////////
@@ -66,14 +67,14 @@ export const zoncertstyles = StyleSheet.create({
   },
 
   conditions: {
-    paddingTop: 10,
+    paddingTop: 5,
+    paddingBottom: 5,
     textAlign: "left",
   },
 
   list: {
     textAlign: "justify",
     marginLeft: 5,
-    wordWrap: "break-word",
   },
 
   bullet: {
@@ -82,7 +83,8 @@ export const zoncertstyles = StyleSheet.create({
   },
 
   subList: {
-    textAlign: "left",
+    // textAlign: "left",
+    textAlign: "justify",
     marginLeft: "5px",
   },
 
@@ -96,7 +98,6 @@ export const zoncertstyles = StyleSheet.create({
 
   rowList: {
     display: "flex",
-
     flexDirection: "row",
     alignItems: "top",
     paddingTop: "6px",
@@ -111,6 +112,15 @@ export const zoncertstyles = StyleSheet.create({
     paddingTop: "6px",
     width: "520px",
     paddingLeft: 30,
+  },
+
+  rowSubsubList: {
+    display: "flex",
+    flexDirection: "row",
+    alignItems: "top",
+    paddingTop: "6px",
+    width: "520px",
+    paddingLeft: 50,
   },
 
   ////////////////////////////////////////////////////////

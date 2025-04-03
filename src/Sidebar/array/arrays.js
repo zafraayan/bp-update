@@ -502,7 +502,7 @@ export const regulations = [
   {
     id: 2,
     code: "r1",
-    title: `Regulations on Residential–1 (R-1) Zone`,
+    title: `Regulations on Residential–1 (R-1) Zone.`,
     descriptions: `An area within cities or municipalities intended for low density residential use of 20 dwelling units per hectare. Per the National Building Code, R-1 Zone is characterized mainly by low-rise single-detached and duplex residential buildings for exclusive use as single (nuclear) family dwellings.`,
     uses: [
       {
@@ -693,6 +693,588 @@ export const regulations = [
             id: 3,
             regulations:
               "The Building Height Limit is 10.00 meters above highest grade as provided in the NBC",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 3,
+    code: "r2",
+    title: `Regulations in Residential–2 (R-2) Zone.`,
+    descriptions: `An area within cities or municipalities intended for medium density residential use. Per the National Building Code, R-2 Zone is characterized mainly by low-rise single- attached,  duplex, or multi-level structures   residential  buildings  for  exclusive  use  as multi- family dwellings.`,
+    uses: [
+      {
+        id: 1,
+        item: "All uses allowed in R-1 Zone",
+        subItem: [],
+      },
+      {
+        id: 2,
+        item: "Apartments",
+        subItem: [],
+      },
+      {
+        id: 3,
+        item: "Boardinghouses",
+        subItem: [],
+      },
+      {
+        id: 4,
+        item: "Dormitories",
+        subItem: [],
+      },
+      {
+        id: 5,
+        item: "Museums",
+        subItem: [],
+      },
+      {
+        id: 6,
+        item: "Libraries",
+        subItem: [],
+      },
+      {
+        id: 7,
+        item: "High School",
+        subItem: [],
+      },
+      {
+        id: 8,
+        item: "Vocational School",
+        subItem: [],
+      },
+    ],
+    extrainformation: [
+      {
+        id: "",
+        title: "Building Regulations",
+        regulations: [
+          {
+            id: 1,
+            regulations:
+              "Per the relevant provisions of the NBC, PD 957 and this Ordinance",
+          },
+          {
+            id: 2,
+            regulations:
+              "The number of allowable storeys/floors above established grade is five (5) as provided in the NBC.",
+          },
+          {
+            id: 3,
+            regulations:
+              "The Building Height Limit is 15.00 meters above highest grade as provided in the NBC.",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 4,
+    code: "r3",
+    title: `Regulations in Residential -3 (R-3) Zone.`,
+    descriptions: `An area within cities or municipalities intended for medium to high density residential. Per the National Building Code, R3 Zone is characterized mainly by low-rise or medium- rise residential buildings for exclusive use as multi-family dwellings with mixed housing types.`,
+    uses: [
+      {
+        id: 1,
+        item: "All uses allowed in R-1 and R-2 Zones",
+        subItem: [],
+      },
+      {
+        id: 2,
+        item: "Residential condominiums",
+        subItem: [],
+      },
+      {
+        id: 3,
+        item: "Pension houses",
+        subItem: [],
+      },
+      {
+        id: 4,
+        item: "Hotel apartments or apartels",
+        subItem: [],
+      },
+      {
+        id: 5,
+        item: "Hotels",
+        subItem: [],
+      },
+      {
+        id: 6,
+        item: "Parking buildings (aboveground/ underground)",
+        subItem: [],
+      },
+    ],
+    extrainformation: [
+      {
+        id: "",
+        title: "Building Regulations",
+        regulations: [
+          {
+            id: 1,
+            regulations:
+              "Per the relevant provisions of the NBC, PD 957 and this Ordinance",
+          },
+          {
+            id: 2,
+            regulations:
+              "The number of allowable storeys/floors above established grade is twelve (12) as provided in the NBC.",
+          },
+          {
+            id: 3,
+            regulations:
+              "The Building Height Limit is 36.00 meters above highest grade as provided in the NBC.",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 5,
+    code: "pa",
+    title: `Production Agricultural Sub-Zone.`,
+    descriptions: `These are areas that are outside of NPAAAD and declared by the City for agricultural use.`,
+    uses: [
+      {
+        id: 1,
+        item: "Cultivation, raising and growing of staple crops such as rice, corn, camote, cassava, and the like",
+        subItem: [],
+      },
+      {
+        id: 2,
+        item: "Growing of diversified plants and trees, such as fruit and flower bearing trees, coffee, tobacco, etc.",
+        subItem: [],
+      },
+      {
+        id: 3,
+        item: "Silviculture, mushroom culture, and the like",
+        subItem: [],
+      },
+      {
+        id: 4,
+        item: "Pastoral activities such as goat raising and cattle fattening",
+        subItem: [],
+      },
+      {
+        id: 5,
+        item: "Fishpond activities",
+        subItem: [],
+      },
+      {
+        id: 6,
+        item: "Poultry and piggery subject to the HLURB Rules and Regulation Governing the Processing of Applications for Locational Clearance of Poultry and Piggery",
+        subItem: [],
+      },
+      {
+        id: 7,
+        item: "Rice/corn mill (single pass such as cono mill)",
+        subItem: [],
+      },
+      {
+        id: 8,
+        item: "Rice/corn warehouses and solar dryers",
+        subItem: [],
+      },
+      {
+        id: 9,
+        item: "Agricultural research and experimentation facilities such as breeding stations, fish farms, nurseries, demonstration farms, etc.",
+        subItem: [],
+      },
+      {
+        id: 10,
+        item: "Plant nursery",
+        subItem: [],
+      },
+      {
+        id: 11,
+        item: "Single-detached dwelling units of landowners",
+        subItem: [],
+      },
+      {
+        id: 12,
+        item: "Customary support facilities such as palay dryers, rice threshers, and storage barns and warehouses",
+        subItem: [],
+      },
+      {
+        id: 13,
+        item: "Ancillary dwelling units/farmhouses for tillers and laborers",
+        subItem: [],
+      },
+      {
+        id: 14,
+        item: "Engaging home business such as dressmaking, tailoring, baking, running a sari- sari store, and the like provided that:",
+        subItem: [],
+      },
+      {
+        id: 15,
+        item: "The number of persons engaged in such business/industry shall not exceed five, inclusive of owner;",
+        subItem: [
+          {
+            id: 1,
+            item: "There shall be no change in the outside appearance of the building premises",
+            subuses: [],
+          },
+          {
+            id: 2,
+            item: "That in no case shall more than 20% of the building be used for said home occupation",
+            subuses: [],
+          },
+          {
+            id: 3,
+            item: "No home occupation shall be conducted in any customary accessory uses cited above",
+            subuses: [],
+          },
+          {
+            id: 4,
+            item: "No traffic shall be generated by such home occupation in greater volume than would normally be expected in a residential neighborhood and any need for parking generated by the conduct of such home occupation shall be met off the street and in a place other than the required front yard",
+            subuses: [],
+          },
+          {
+            id: 5,
+            item: "No equipment or process shall be used in such home occupation which creates noise, vibration, glare, fumes, odors and electrical interference detectable to the normal senses and visual or audible interference in any radio or television receiver or causes fluctuations in line voltage off the premises",
+            subuses: [],
+          },
+          {
+            id: 6,
+            item: "Home Industry Classified as cottage industry provided that:",
+            subuses: [
+              {
+                id: 1,
+                title:
+                  "Such home industry shall not occupy more than thirty percent of the floor area of the dwelling unit",
+              },
+              {
+                id: 2,
+                title:
+                  "There shall be no change or alteration in the outside appearance of the dwelling unit and shall not be a hazard or nuisance",
+              },
+              {
+                id: 3,
+                title:
+                  "Such shall consider the provisions pertaining to customary accessory uses, traffic and equipment as enumerated under Home Occupation of this section",
+              },
+            ],
+          },
+        ],
+      },
+      {
+        id: 16,
+        item: "Class A slaughterhouse/abattoir",
+        subItem: [],
+      },
+    ],
+    extrainformation: [
+      {
+        id: "",
+        title: "Building Regulations",
+        regulations: [
+          {
+            id: 1,
+            regulations:
+              "The Building Height Limit is 15.00 meters above established grade as provided in the NBC",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 6,
+    code: "nspsz",
+    title: `NIPAS: Strict Protection Sub-Zone.`,
+    descriptions: `Per the NIPAS Act, this is an area that have “…high bio-diversity value which shall be closed to all human activity except for scientific studies and/ or ceremonial or religious use by indigenous communities.”`,
+    uses: [
+      {
+        id: 1,
+        item: "Allowable uses/activities shall be in accordance with the Protected Area Management Plan (PAMP) as approved by the Protected Area Management Board (PAMB). These may include:",
+        subItem: [
+          {
+            id: 1,
+            item: "Scientific studies",
+            subuses: [],
+          },
+          {
+            id: 2,
+            item: "Ceremonial or religious use by indigenous communities",
+            subuses: [],
+          },
+        ],
+      },
+    ],
+    extrainformation: [
+      {
+        id: "",
+        title: "Building Regulations",
+        regulations: [
+          {
+            id: 1,
+            regulations: "No permanent buildings or structures are allowed",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 7,
+    code: "siz",
+    title: `Regulations in Special Institutional Zone.`,
+    descriptions: `An area within the City intended principally for particular types of institutional establishments e.g. welfare homes, orphanages, home for the aged, rehabilitation and training centers, military camps/reservation/bases/training grounds, etc.`,
+    uses: [
+      {
+        id: 1,
+        item: "Welfare home, orphanages, boys and girls town, nursing homes, homes for the aged, and the like",
+        subItem: [],
+      },
+      {
+        id: 2,
+        item: "Rehabilitation and vocational training centers for ex-convicts, drug addicts, unwed mothers, physically, mentally and emotionally handicapped, ex-sanitaria inmates, and similar establishments",
+        subItem: [],
+      },
+      {
+        id: 3,
+        item: "Military camps/reservations/bases and training grounds",
+        subItem: [],
+      },
+      {
+        id: 4,
+        item: "Jails, prisons, reformatories, and correctional institution",
+        subItem: [],
+      },
+      {
+        id: 5,
+        item: "Penitentiaries and correctional institutions",
+        subItem: [],
+      },
+      {
+        id: 6,
+        item: "Leprosaria",
+        subItem: [],
+      },
+      {
+        id: 7,
+        item: "Psychiatric facilities, such as mental hospitals, mental sanitaria/asylums",
+        subItem: [],
+      },
+      {
+        id: 8,
+        item: "Parks, playgrounds, pocket parks, parkways, promenades, and playlots",
+        subItem: [],
+      },
+      {
+        id: 9,
+        item: "Customary accessory uses incidental to any of the above uses such as:",
+        subItem: [
+          {
+            id: 1,
+            item: "Staff houses/quarters",
+            subuses: [],
+          },
+          {
+            id: 2,
+            item: "Offices",
+            subuses: [],
+          },
+          {
+            id: 3,
+            item: "Eateries/canteens",
+            subuses: [],
+          },
+          {
+            id: 4,
+            item: "Parking lots/garage facilities",
+            subuses: [],
+          },
+          {
+            id: 5,
+            item: "Storerooms and warehouses but only as may be necessary for the efficient conduct of the business",
+            subuses: [],
+          },
+          {
+            id: 6,
+            item: "Pump houses",
+            subuses: [],
+          },
+          {
+            id: 7,
+            item: "Generator houses",
+            subuses: [],
+          },
+        ],
+      },
+    ],
+    extrainformation: [
+      {
+        id: "",
+        title: "Building Density and Bulk Regulations",
+        regulations: [
+          {
+            id: 1,
+            regulations:
+              "Per the relevant provisions of the NBC and this Ordinance",
+          },
+          {
+            id: 2,
+            regulations:
+              "The Building Height Limit is 15 meters above highest grade as provided in the NBC.",
+          },
+          {
+            id: 3,
+            regulations:
+              "Subject to national locational guidelines and standards of concerned agencies.",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 8,
+    code: "frs",
+    title: `Regulations in Forest Reserve Sub-Zone.`,
+    descriptions: `Per the Revised Forestry Code, these are “lands of the public domain which have been the subject of the present system of classification and determined to be needed for forest purposes. Also called Permanent Forest”.`,
+    uses: [
+      {
+        id: 1,
+        item: "Reforestation",
+        subItem: [],
+      },
+      {
+        id: 2,
+        item: "Religious ceremonies of Indigenous Peoples (IPs)",
+        subItem: [],
+      },
+      {
+        id: 3,
+        item: "Burial sites of IPs",
+        subItem: [],
+      },
+      {
+        id: 4,
+        item: "Scientific studies that do not involve gathering of species or any alteration in the area",
+        subItem: [],
+      },
+      {
+        id: 5,
+        item: "Other activities permitted in the Forest Land Use Plan (FLUP)",
+        subItem: [],
+      },
+    ],
+    extrainformation: [
+      {
+        id: "",
+        title: "Building Regulations",
+        regulations: [
+          {
+            id: 1,
+            regulations: "No permanent buildings or structures are allowed",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 9,
+    code: "htz",
+    title: `Regulations in Heritage Overlay Zone (HTG-OZ).`,
+    descriptions: `The HTG-OZ is applied in areas with historic centers/heritage zones, including heritage houses. The objectives are: (1) to preserve existing historic structures/sites; and (2) to harmonize the design and construction of new ones with the design of these historic structures/sites.
+`,
+    uses: [
+      {
+        id: 1,
+        item: "Uses allowed under Rule II. Land Use Policies and Regulations of the Guidelines, Policies and Standards for the Conservation and Development of Historic Centers/ Heritage Zones by the National Historical Commission of the Philippines (NHCP) shall apply to sites that the NHCP or National Museum (NM) has declared Historic Centers or Heritage Zones, by virtue of RA 10066 (Heritage Act).",
+        subItem: [],
+      },
+      {
+        id: 2,
+        item: "For declared heritage houses, allowable uses shall be limited to:",
+        subItem: [
+          {
+            id: 1,
+            item: "Single-detached residential",
+            subuses: [],
+          },
+          {
+            id: 2,
+            item: "Museum",
+            subuses: [],
+          },
+          {
+            id: 3,
+            item: "Shops, offices, restaurants, craftsmen’s workshops and retail outlets (only at the ground floor)",
+            subuses: [],
+          },
+          {
+            id: 4,
+            item: "For new construction, allowable uses shall be as provided in the base R-1 Zones.",
+            subuses: [],
+          },
+        ],
+      },
+    ],
+    extrainformation: [
+      {
+        id: 1,
+        title:
+          "The following regulations supersede those provided in the base R-1 zone:",
+        regulations: [],
+      },
+      {
+        id: 2,
+        title: "For declared heritage houses:",
+        regulations: [
+          {
+            id: 1,
+            regulations:
+              "The height and floor area of the existing building shall not be altered.",
+          },
+        ],
+      },
+      {
+        id: 3,
+        title: "For new construction:",
+        regulations: [
+          {
+            id: 1,
+            regulations:
+              "BHL: Building height limit for buildings within the buffer zone shall not be more than the roof apex of the declared heritage structure (Guidelines, Policies and Standards for the Conservation and Development of Historic Centers/Heritage Zones, NHCP 2012).",
+          },
+        ],
+      },
+      {
+        id: 4,
+        title: "Building/Structure Design Regulations",
+        regulations: [
+          {
+            id: 1,
+            regulations:
+              "Rule III. Building Requirements of the Guidelines, Policies and Standards for the Conservation and Development of Historic Centers/Heritage Zones by the National Historical Commission of the Philippines (NHCP) shall apply to sites that the NHCP or National Museum (NM) has declared Historic Centers or Heritage Zones, by virtue of RA 10066 (Heritage Act).",
+            subregulations: [],
+          },
+          {
+            id: 2,
+            regulations: "For declared heritage houses:",
+            subregulations: [
+              {
+                id: 1,
+                title:
+                  "Repair and renovation work, to include building and landscape, shall ensure that the original architectural design at the interior and exterior are maintained.",
+              },
+              {
+                id: 2,
+                title:
+                  "The size and appearance of business and other signs shall be made to blend with the period design of the house.",
+              },
+            ],
+          },
+          {
+            id: 3,
+            regulations: "For new construction:",
+            subregulations: [
+              {
+                id: 1,
+                title:
+                  "Designs, to include building and landscape, shall be made similar to the period designs of the declared houses of ancestry",
+              },
+            ],
           },
         ],
       },
