@@ -1,0 +1,14 @@
+id
+code
+title
+description
+uses
+	id
+	item
+	subitem
+		id
+		item
+		subuses
+			id
+			title
+			

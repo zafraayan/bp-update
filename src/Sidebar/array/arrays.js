@@ -1280,4 +1280,1395 @@ export const regulations = [
       },
     ],
   },
+  {
+    id: 10,
+    code: "etz",
+    title: `Regulations in Eco-Tourism Zone.`,
+    descriptions: `Data Not Available`,
+    uses: [],
+    extrainformation: [],
+  },
+  {
+    id: 11,
+    code: "c1",
+    title: `Regulations in Commercial – 1 (C-1) Zone.`,
+    descriptions: `A low-density commercial area within the City intended for neighborhood or community scale trade, service and business activities.`,
+    uses: [
+      {
+        id: 1,
+        item: "Retail stores and shops like:",
+        subItem: [
+          {
+            id: 1,
+            item: "Pump houses",
+            subuses: [],
+          },
+          {
+            id: 2,
+            item: "Generator houses",
+            subuses: [],
+          },
+          {
+            id: 3,
+            item: "Department stores",
+            subuses: [],
+          },
+          {
+            id: 4,
+            item: "Bookstores and office supply shops",
+            subuses: [],
+          },
+          {
+            id: 5,
+            item: "Art supplies and novelties",
+            subuses: [],
+          },
+          {
+            id: 6,
+            item: "Home appliance stores",
+            subuses: [],
+          },
+          {
+            id: 7,
+            item: "Car display and dealer stores",
+            subuses: [],
+          },
+          {
+            id: 8,
+            item: "Photo shops",
+            subuses: [],
+          },
+          {
+            id: 9,
+            item: "Flower shops",
+            subuses: [],
+          },
+          {
+            id: 10,
+            item: "Curio or antique shops",
+            subuses: [],
+          },
+          {
+            id: 11,
+            item: "Pet shops and aquarium stores",
+            subuses: [],
+          },
+          {
+            id: 12,
+            item: "Jewellery shops",
+            subuses: [],
+          },
+          {
+            id: 13,
+            item: "Consumer electronics such as cellular phones, cameras, laptops, home appliances and the like",
+            subuses: [],
+          },
+          {
+            id: 14,
+            item: "Drugstores",
+            subuses: [],
+          },
+        ],
+      },
+      {
+        id: 2,
+        item: "Food market and shops like:",
+        subItem: [
+          {
+            id: 1,
+            item: "Bakery, cake, pastry and delicatessen shops",
+            subuses: [],
+          },
+          {
+            id: 2,
+            item: "Liquor and wine stores",
+            subuses: [],
+          },
+          {
+            id: 3,
+            item: "Groceries",
+            subuses: [],
+          },
+          {
+            id: 4,
+            item: "Supermarkets",
+            subuses: [],
+          },
+          {
+            id: 5,
+            item: "Convenience stores",
+            subuses: [],
+          },
+        ],
+      },
+      {
+        id: 3,
+        item: "Product showroom/display store",
+        subItem: [
+          {
+            id: 1,
+            item: "Warehouse/storage facility for non-pollutive/non-hazardous finished products",
+            subuses: [],
+          },
+          {
+            id: 2,
+            item: "Personal service shops like:",
+            subuses: [],
+          },
+          {
+            id: 3,
+            item: "Medical, dental, and similar clinics",
+            subuses: [],
+          },
+          {
+            id: 4,
+            item: "Beauty parlor",
+            subuses: [],
+          },
+          {
+            id: 5,
+            item: "Barber shop",
+            subuses: [],
+          },
+          {
+            id: 6,
+            item: "Barber Wellness facilities such as sauna, spa, massage and facial clinics",
+            subuses: [],
+          },
+          {
+            id: 7,
+            item: "Dressmaking and tailoring shop",
+            subuses: [],
+          },
+        ],
+      },
+      {
+        id: 4,
+        item: "Bayad centers",
+        subItem: [],
+      },
+      {
+        id: 5,
+        item: "Laundries",
+        subItem: [],
+      },
+      {
+        id: 6,
+        item: "Internet café and cyber stations",
+        subItem: [],
+      },
+      {
+        id: 7,
+        item: "Photo/video, lights & sounds services",
+        subItem: [],
+      },
+      {
+        id: 8,
+        item: "Catering services",
+        subItem: [],
+      },
+      {
+        id: 9,
+        item: "Event planners",
+        subItem: [],
+      },
+      {
+        id: 10,
+        item: "Water stations",
+        subItem: [],
+      },
+      {
+        id: 11,
+        item: "Courier services",
+        subItem: [],
+      },
+      {
+        id: 12,
+        item: "Security agencies",
+        subItem: [],
+      },
+      {
+        id: 13,
+        item: "Janitorial services",
+        subItem: [],
+      },
+      {
+        id: 14,
+        item: "Travel agencies",
+        subItem: [],
+      },
+      {
+        id: 15,
+        item: "Photo and portrait studios",
+        subItem: [],
+      },
+      {
+        id: 16,
+        item: "Repair shops like:",
+        subItem: [
+          {
+            id: 1,
+            item: "House furniture and appliances repair shops",
+            subuses: [],
+          },
+          {
+            id: 2,
+            item: "Motor vehicles and accessory repair shops",
+            subuses: [],
+          },
+          {
+            id: 3,
+            item: "Battery shops and repair shops",
+            subuses: [],
+          },
+          {
+            id: 4,
+            item: "Bicycle repair shops",
+            subuses: [],
+          },
+          {
+            id: 5,
+            item: "Repair shops for watches, bags, shoes, cellular phones, cameras, computers and the like",
+            subuses: [],
+          },
+        ],
+      },
+      {
+        id: 17,
+        item: "Recreational centers/establishments like",
+        subItem: [
+          {
+            id: 1,
+            item: "Play courts e.g. tennis court, bowling lane, billiard halls",
+            subuses: [],
+          },
+          {
+            id: 2,
+            item: "Swimming pool",
+            subuses: [],
+          },
+          {
+            id: 3,
+            item: "Gymnasium",
+            subuses: [],
+          },
+        ],
+      },
+      {
+        id: 18,
+        item: "Restaurants and other eateries",
+        subItem: [],
+      },
+      {
+        id: 19,
+        item: "Lotto terminals, off-fronton, on-line bingo outlets and off-track betting stations",
+        subItem: [],
+      },
+      {
+        id: 20,
+        item: "Parks, playgrounds, pocket parks, parkways, promenades and play lots",
+        subItem: [],
+      },
+      {
+        id: 21,
+        item: "Plant nurseries",
+        subItem: [],
+      },
+      {
+        id: 22,
+        item: "Vocational/technical school",
+        subItem: [],
+      },
+      {
+        id: 23,
+        item: "Special Education (SPED) school",
+        subItem: [],
+      },
+      {
+        id: 24,
+        item: "Short term special education like:",
+        subItem: [
+          {
+            id: 1,
+            item: "Dance schools",
+            subuses: [],
+          },
+          {
+            id: 2,
+            item: "Schools for self-defence",
+            subuses: [],
+          },
+          {
+            id: 3,
+            item: "Driving school",
+            subuses: [],
+          },
+          {
+            id: 4,
+            item: "Speech clinics",
+            subuses: [],
+          },
+          {
+            id: 5,
+            item: "Tutorial centers",
+            subuses: [],
+          },
+        ],
+      },
+      {
+        id: 25,
+        item: "Embassies/consulates",
+        subItem: [],
+      },
+      {
+        id: 26,
+        item: "Libraries/museums",
+        subItem: [],
+      },
+      {
+        id: 27,
+        item: "Financial institutions/services like:",
+        subItem: [
+          {
+            id: 1,
+            item: "Banks",
+            subuses: [],
+          },
+          {
+            id: 2,
+            item: "Stand-alone automated teller machines",
+            subuses: [],
+          },
+          {
+            id: 3,
+            item: "Insurance",
+            subuses: [],
+          },
+          {
+            id: 4,
+            item: "Foreign exchange",
+            subuses: [],
+          },
+          {
+            id: 5,
+            item: "Money lending",
+            subuses: [],
+          },
+          {
+            id: 6,
+            item: "Pawnshops",
+            subuses: [],
+          },
+        ],
+      },
+      {
+        id: 28,
+        item: "Offices",
+        subItem: [],
+      },
+      {
+        id: 29,
+        item: "Parking lots/garage facilities",
+        subItem: [],
+      },
+      {
+        id: 30,
+        item: "Parking buildings (aboveground/underground)",
+        subItem: [],
+      },
+      {
+        id: 31,
+        item: "Auto repair, tire, vulcanizing shops and car wash",
+        subItem: [],
+      },
+      {
+        id: 32,
+        item: "Gasoline filling stations/services stations",
+        subItem: [],
+      },
+      {
+        id: 33,
+        item: "Engraving, photo developing and printing shops",
+        subItem: [],
+      },
+      {
+        id: 34,
+        item: "Printing, publication, and graphics shops",
+        subItem: [],
+      },
+      {
+        id: 35,
+        item: "Manufacture of insignia, badges, and similar emblems except metal",
+        subItem: [],
+      },
+      {
+        id: 36,
+        item: "Construction supply stores/depots",
+        subItem: [],
+      },
+      {
+        id: 37,
+        item: "Funeral parlors (Category II and III)",
+        subItem: [],
+      },
+      {
+        id: 38,
+        item: "Commercial housing like:",
+        subItem: [
+          {
+            id: 1,
+            item: "Hotel",
+            subuses: [],
+          },
+          {
+            id: 2,
+            item: "Apartment",
+            subuses: [],
+          },
+          {
+            id: 3,
+            item: "Apartel",
+            subuses: [],
+          },
+          {
+            id: 4,
+            item: "Boarding house",
+            subuses: [],
+          },
+          {
+            id: 5,
+            item: "Dormitory",
+            subuses: [],
+          },
+          {
+            id: 6,
+            item: "Pension house",
+            subuses: [],
+          },
+        ],
+      },
+      {
+        id: 39,
+        item: "All uses allowed R-1 Zones",
+        subItem: [],
+      },
+      {
+        id: 40,
+        item: "Customary accessory uses incidental to any of the above uses such as:",
+        subItem: [
+          {
+            id: 1,
+            item: "Staff houses/quarters",
+            subuses: [],
+          },
+          {
+            id: 2,
+            item: "Parking lots/Building garage",
+            subuses: [],
+          },
+          {
+            id: 3,
+            item: "Storerooms and warehouses but only as may be necessary for the efficient conduct of the business",
+            subuses: [],
+          },
+          {
+            id: 4,
+            item: "Pump houses",
+            subuses: [],
+          },
+          {
+            id: 5,
+            item: "Generator houses",
+            subuses: [],
+          },
+        ],
+      },
+    ],
+    extrainformation: [
+      {
+        id: "",
+        title: "Building Regulations",
+        regulations: [
+          {
+            id: 1,
+            regulations:
+              "Per the relevant provisions of the NBC, PD 957 and this Ordinance",
+          },
+          {
+            id: 2,
+            regulations:
+              "The number of allowable storeys/floors above established grade is five (5) as provided in the NBC.",
+          },
+          {
+            id: 3,
+            regulations:
+              "The Building Height Limit is 15.00 meters above highest grade as provided in the NBC.",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 12,
+    code: "c2",
+    title: `Regulations in Commercial – 2 (C-2) Zone.`,
+    descriptions: `A medium to high density commercial area within the City intended for trade, service and business activities performing complementary/ supplementary functions to the CBD.
+`,
+    uses: [
+      {
+        id: 1,
+        item: "All uses allowed in C-1 Zone",
+        subItem: [],
+      },
+      {
+        id: 2,
+        item: "Wholesale stores",
+        subItem: [],
+      },
+      {
+        id: 3,
+        item: "Wet and dry markets",
+        subItem: [],
+      },
+      {
+        id: 4,
+        item: "Shopping centers, malls and supermarkets",
+        subItem: [],
+      },
+      {
+        id: 5,
+        item: "Recreational center/establishments like",
+        subItem: [],
+      },
+      {
+        id: 6,
+        item: "Bars, sing-along lounges, bistros, pubs, beer gardens, disco, and dance halls",
+        subItem: [],
+      },
+      {
+        id: 7,
+        item: "Exhibit halls",
+        subItem: [],
+      },
+      {
+        id: 8,
+        item: "Convention centers and related facilities",
+        subItem: [],
+      },
+      {
+        id: 9,
+        item: "Business Process Outsourcing services",
+        subItem: [],
+      },
+      {
+        id: 10,
+        item: "Radio and television stations",
+        subItem: [],
+      },
+      {
+        id: 11,
+        item: `Transportation terminals/garage, "With repair" or "Without repair`,
+        subItem: [],
+      },
+      {
+        id: 12,
+        item: "Display for cars, tractors, etc.",
+        subItem: [],
+      },
+      {
+        id: 13,
+        item: "Motorpool",
+        subItem: [],
+      },
+      {
+        id: 14,
+        item: `Hauling services and garage terminals Trucks", "Tow trucks", "Buses"`,
+        subItem: [],
+      },
+      {
+        id: 15,
+        item: `Auto sales and rentals,"Automotive handicraft","Accessory and spare parts shops", "Marine craft sales yards", "Aircraft sales yards",`,
+        subItem: [],
+      },
+      {
+        id: 16,
+        item: "Boat storage",
+        subItem: [],
+      },
+      {
+        id: 17,
+        item: "Vehicle emission testing center",
+        subItem: [],
+      },
+      {
+        id: 18,
+        item: "Machinery display shop/center",
+        subItem: [],
+      },
+      {
+        id: 19,
+        item: "Welding shops",
+        subItem: [],
+      },
+      {
+        id: 20,
+        item: `Machine shop service operation, Repairing/rebuilding", "Custom job orders`,
+        subItem: [],
+      },
+      {
+        id: 21,
+        item: "Welding shop",
+        subItem: [],
+      },
+      {
+        id: 22,
+        item: "Medium scale junk shop",
+        subItem: [],
+      },
+      {
+        id: 23,
+        item: `Glassware and metalware stores, Household equipment,  Appliances`,
+        subItem: [],
+      },
+      {
+        id: 24,
+        item: `Signboard and streamer painting, Silk screening`,
+        subItem: [],
+      },
+      {
+        id: 25,
+        item: "Printing/typesetting, copiers, and duplicating services",
+        subItem: [],
+      },
+      {
+        id: 26,
+        item: "Recording and film laboratories",
+        subItem: [],
+      },
+      {
+        id: 27,
+        item: "Gravel and sand stores",
+        subItem: [],
+      },
+      {
+        id: 28,
+        item: "Lumber/hardware",
+        subItem: [],
+      },
+      {
+        id: 29,
+        item: "Paint stores without bulk handling",
+        subItem: [],
+      },
+      {
+        id: 30,
+        item: "Gardens and landscaping supply/contractors",
+        subItem: [],
+      },
+      {
+        id: 31,
+        item: "Manufacture of ice, ice blocks, cubes, tubes; crush except dry ice",
+        subItem: [],
+      },
+      {
+        id: 32,
+        item: "Lechon stores",
+        subItem: [],
+      },
+      {
+        id: 33,
+        item: "Chicharon factory",
+        subItem: [],
+      },
+      {
+        id: 34,
+        item: "Biscuit factory—manufacture of biscuits, cookies, crackers, and other similar dried bakery products",
+        subItem: [],
+      },
+      {
+        id: 35,
+        item: "Doughnut and hopia factory",
+        subItem: [],
+      },
+      {
+        id: 36,
+        item: "Other bakery products not elsewhere classified (n.e.c.)",
+        subItem: [],
+      },
+      {
+        id: 37,
+        item: "Shops for repacking of food products e.g. fruits, vegetables, sugar, and other related products",
+        subItem: [],
+      },
+      {
+        id: 38,
+        item: "Manufacture of wood furniture including upholstered",
+        subItem: [],
+      },
+      {
+        id: 39,
+        item: "Manufacture of rattan furniture including upholstered",
+        subItem: [],
+      },
+      {
+        id: 40,
+        item: "Manufacture of box beds and mattresses",
+        subItem: [],
+      },
+      {
+        id: 41,
+        item: "Funeral parlors (all categories)",
+        subItem: [],
+      },
+      {
+        id: 42,
+        item: "Commercial condominium (with residential units in upper floors)",
+        subItem: [],
+      },
+      {
+        id: 43,
+        item: "Commercial housing like:",
+        subItem: [
+          {
+            id: 1,
+            item: "Motel",
+            subuses: [],
+          },
+          {
+            id: 2,
+            item: "Condotel",
+            subuses: [],
+          },
+        ],
+      },
+      {
+        id: 44,
+        item: "All uses allowed in R-1 and R-2 Zones",
+        subItem: [],
+      },
+    ],
+    extrainformation: [
+      {
+        id: "",
+        title: "Building Regulations",
+        regulations: [
+          {
+            id: 1,
+            regulations:
+              "Per the relevant provisions of the NBC and this Ordinance",
+          },
+          {
+            id: 2,
+            regulations:
+              "The number of allowable storeys/floors above established grade is six (6) as provided in the NBC",
+          },
+          {
+            id: 3,
+            regulations:
+              "The Building Height Limit is 18.00 meters above highest grade as provided in the NBC",
+          },
+          {
+            id: 4,
+            regulations:
+              "Subject to national locational guidelines and standards of concerned agencies.",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 13,
+    code: "c3",
+    title: `Regulations in Commercial – 3 (C-3) Zone.`,
+    descriptions: `A high-density commercial area within the City intended for regional shopping centers such as large malls and other commercial and business activities which are regional in scope or where market activities generate traffic and require utilities and services that extend beyond local boundaries and requires metropolitan level development planning and implementation. High rise hotels, sports stadium or sports complexes area also allowed in this zone. This zone may also be called as the Central Business District (CBD).`,
+    uses: [
+      {
+        id: 1,
+        item: "All uses allowed in C-1 and C-2 Zones",
+        subItem: [],
+      },
+      {
+        id: 2,
+        item: "All uses allowed in R-3, R-4 and R-5 Zones",
+        subItem: [],
+      },
+      {
+        id: 3,
+        item: "Regional shopping malls/centers",
+        subItem: [],
+      },
+    ],
+    extrainformation: [
+      {
+        id: "",
+        title: "Building Regulations",
+        regulations: [
+          {
+            id: 1,
+            regulations:
+              "Per relevant provisions of the NBC and this Ordinance",
+          },
+          {
+            id: 2,
+            regulations:
+              "The number of allowable storeys/floors above established grade is sixty (60) as provided in the NBC",
+          },
+          {
+            id: 3,
+            regulations:
+              "The Building Height Limit is 180.00 meters above highest grade as provided in the NBC",
+          },
+          {
+            id: 4,
+            regulations:
+              "Subject to national locational guidelines and standards of concerned agencies.",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 14,
+    code: "af",
+    title: `Regulations in Agro-Forestry Zone.`,
+    descriptions: `No Data Available`,
+    uses: [],
+    extrainformation: [
+      {
+        id: "",
+        title: "Building Regulations",
+        regulations: [],
+      },
+    ],
+  },
+  {
+    id: 15,
+    code: "aiz",
+    title: `Regulations in Agri-Industrial Zone.`,
+    descriptions: `These are areas within Cities/Municipalities intended primarily for integrated farm operations and related product processing activities such as plantation for bananas, pineapple, sugar, etc.`,
+    uses: [
+      {
+        id: 1,
+        item: "All uses allowed in agriculture zone",
+        subItem: [],
+      },
+      {
+        id: 2,
+        item: "Allowable uses in Industrial 1 (light) and Industrial 2 (medium industries) Zones",
+        subItem: [],
+      },
+      {
+        id: 3,
+        item: "Rice/corn mills",
+        subItem: [],
+      },
+      {
+        id: 4,
+        item: "Rice/corn mill warehouses & solar dryers",
+        subItem: [],
+      },
+      {
+        id: 5,
+        item: "Agricultural and/or agri-industrial research & experimentation facilities",
+        subItem: [],
+      },
+      {
+        id: 6,
+        item: "Drying, cleaning, curing and preserving of meat and its by-products and derivatives",
+        subItem: [],
+      },
+      {
+        id: 7,
+        item: "Drying, smoking and airing of tobacco",
+        subItem: [],
+      },
+      {
+        id: 8,
+        item: "Flour mill",
+        subItem: [],
+      },
+      {
+        id: 9,
+        item: "Cassava flour mill",
+        subItem: [],
+      },
+      {
+        id: 10,
+        item: "Manufacture of coffee",
+        subItem: [],
+      },
+      {
+        id: 11,
+        item: "Manufacture of unprepared animal feeds and other grain milling",
+        subItem: [],
+      },
+      {
+        id: 12,
+        item: "Production of prepared feeds for animals",
+        subItem: [],
+      },
+      {
+        id: 13,
+        item: "Cigar and cigarette factory",
+        subItem: [],
+      },
+      {
+        id: 14,
+        item: "Curing and re-drying tobacco leaves",
+        subItem: [],
+      },
+      {
+        id: 15,
+        item: "Miscellaneous processing of tobacco leaves n.e.c.",
+        subItem: [],
+      },
+      {
+        id: 16,
+        item: "Weaving hemp textile",
+        subItem: [],
+      },
+      {
+        id: 17,
+        item: "Jute spinning and weaving",
+        subItem: [],
+      },
+      {
+        id: 18,
+        item: "Manufacture of charcoal",
+        subItem: [],
+      },
+      {
+        id: 19,
+        item: "Milk processing plants (manufacturing filled, reconstituted or recombined milk, condensed or evaporated)",
+        subItem: [],
+      },
+      {
+        id: 20,
+        item: "Butter and cheese processing plants",
+        subItem: [],
+      },
+      {
+        id: 21,
+        item: "Natural fluid milk processing (pasteurizing, homogenizing, vitaminizing, bottling of natural animal milk and cream related products)",
+        subItem: [],
+      },
+      {
+        id: 22,
+        item: "Other dairy products n.e.c.",
+        subItem: [],
+      },
+      {
+        id: 23,
+        item: "Canning and preserving of fruits and fruit juices",
+        subItem: [],
+      },
+      {
+        id: 24,
+        item: "Canning and preserving of vegetables and vegetable juices",
+        subItem: [],
+      },
+      {
+        id: 25,
+        item: "Canning and preserving of vegetable sauces",
+        subItem: [],
+      },
+      {
+        id: 26,
+        item: "Miscellaneous canning and preserving of fruit and vegetables n.e.c.",
+        subItem: [],
+      },
+      {
+        id: 27,
+        item: "Fish canning",
+        subItem: [],
+      },
+      {
+        id: 28,
+        item: "Patis factory",
+        subItem: [],
+      },
+      {
+        id: 29,
+        item: "Bagoong factory",
+        subItem: [],
+      },
+      {
+        id: 30,
+        item: "Processing, preserving and canning of fish and other seafood n.e.c.",
+        subItem: [],
+      },
+      {
+        id: 31,
+        item: "Manufacture of desiccated coconut",
+        subItem: [],
+      },
+      {
+        id: 32,
+        item: "Manufacture of starch and its products",
+        subItem: [],
+      },
+      {
+        id: 33,
+        item: "Manufacture of wines from fruit juices",
+        subItem: [],
+      },
+      {
+        id: 34,
+        item: "Vegetable oil mills, including coconut oil",
+        subItem: [],
+      },
+      {
+        id: 35,
+        item: "Muscovado sugar mill",
+        subItem: [],
+      },
+      {
+        id: 36,
+        item: "Cotton textile mill",
+        subItem: [],
+      },
+      {
+        id: 37,
+        item: "Manufacture/processing of other plantation crops e.g. pineapple, bananas, etc.",
+        subItem: [],
+      },
+      {
+        id: 38,
+        item: "Other commercial handicrafts and industrial activities utilizing plant or animal parts and/or products as raw materials",
+        subItem: [],
+      },
+      {
+        id: 39,
+        item: "Other accessory uses incidental to agri-industrial activities",
+        subItem: [],
+      },
+      {
+        id: 40,
+        item: "Sugarcane milling (centrifugal and refined)",
+        subItem: [],
+      },
+      {
+        id: 41,
+        item: "Sugar refining",
+        subItem: [],
+      },
+      {
+        id: 42,
+        item: "Customary support facilities such as palay dryers, rice threshers and storage barns and warehouses",
+        subItem: [],
+      },
+      {
+        id: 43,
+        item: "Ancillary dwelling units/farmhouses for landowners. tenants, tillers and laborers",
+        subItem: [],
+      },
+      {
+        id: 44,
+        item: 'Class "A" slaughterhouse/abattoir',
+        subItem: [],
+      },
+      {
+        id: 45,
+        item: 'Class "AA" slaughterhouse/abattoir',
+        subItem: [],
+      },
+    ],
+    extrainformation: [
+      {
+        id: "",
+        title: "Building Regulations",
+        regulations: [
+          {
+            id: 1,
+            regulations:
+              "The Building Height Limit is 15.00 meters above established grade as provided in the NBC.",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 16,
+    code: "mdm",
+    title: `Regulations in Medium Density Mixed-Use Development Zone (MD-2).`,
+    descriptions: ``,
+    uses: [
+      {
+        id: 1,
+        item: "All uses allowed in C-2 Zone",
+        subItem: [],
+      },
+      {
+        id: 2,
+        item: "All uses allowed in R-1 and R-2, R3 except residential subdivisions (single-detached, attached, duplex, rowhouses)",
+        subItem: [],
+      },
+      {
+        id: 3,
+        item: "Townhouses",
+        subItem: [],
+      },
+      {
+        id: 4,
+        item: "Medium Rise Building/Development for Socialized Housing program",
+        subItem: [],
+      },
+      {
+        id: 5,
+        item: "Learning facilities such as training centers, seminar halls, and libraries",
+        subItem: [],
+      },
+      {
+        id: 6,
+        item: "Museums, exhibition halls, and art galleries",
+        subItem: [],
+      },
+      {
+        id: 7,
+        item: "Civic centers and community centers",
+        subItem: [],
+      },
+      {
+        id: 8,
+        item: "Places of worship, such as churches, mosques, temples, shrines, chapels",
+        subItem: [],
+      },
+    ],
+    extrainformation: [
+      {
+        id: "",
+        title: "Building Density and Bulk Regulations",
+        regulations: [
+          {
+            id: 1,
+            regulations:
+              "Per relevant provisions of the NBC and this Ordinance",
+          },
+          {
+            id: 2,
+            regulations:
+              "The number of allowable storeys/floors above established grade is twelve (12), provided, only the 1st and 2nd floor/storey is allowed for commercial use",
+          },
+          {
+            id: 3,
+            regulations:
+              "The Building Height Limit is 36.00 meters above highest grade as provided in the NBC",
+          },
+          {
+            id: 4,
+            regulations:
+              "Subject to national locational guidelines and standards of concerned agencies.",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 17,
+    code: "ldm1a",
+    title: `Regulations in Low Density Mixed-Use Development Zone (MD-1A)`,
+    descriptions: ``,
+    uses: [
+      {
+        id: 1,
+        item: "All uses allowed in C-1 Zone",
+        subItem: [],
+      },
+      {
+        id: 2,
+        item: "All uses allowed in R-1 and R-2 Zones, except residential subdivisions (single-detached, attached, duplex, rowhouses)",
+        subItem: [],
+      },
+      {
+        id: 3,
+        item: "Townhouses",
+        subItem: [],
+      },
+      {
+        id: 4,
+        item: "Medium Rise Building/Development for Socialized Housing program",
+        subItem: [],
+      },
+    ],
+    extrainformation: [
+      {
+        id: "",
+        title: "Building Density and Bulk Regulations",
+        regulations: [
+          {
+            id: 1,
+            regulations:
+              "Per relevant provisions of the NBC and this Ordinance",
+          },
+          {
+            id: 2,
+            regulations:
+              "The number of allowable storeys/floors above established grade is five (5), provided, only the 1st storey is allowed for commercial use",
+          },
+          {
+            id: 3,
+            regulations:
+              "The Building Height Limit is 15.00 meters above highest grade as provided in the NBC",
+          },
+          {
+            id: 4,
+            regulations:
+              "Subject to national locational guidelines and standards of concerned agencies.",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 18,
+    code: "ldm1b",
+    title: `Regulations in Low Density Mixed-Use Development Zone (MD-1A)`,
+    descriptions: ``,
+    uses: [
+      {
+        id: 1,
+        item: "All uses allowed in C-1 Zone",
+        subItem: [],
+      },
+      {
+        id: 2,
+        item: "All uses allowed in R-1 and R-2 Zones, except residential subdivisions (single-detached, attached, duplex, rowhouses)",
+        subItem: [],
+      },
+      {
+        id: 3,
+        item: "Townhouses",
+        subItem: [],
+      },
+      {
+        id: 4,
+        item: "Medium Rise Building/Development for Socialized Housing program",
+        subItem: [],
+      },
+      {
+        id: 5,
+        item: "Learning facilities such as training centers, seminar halls, and libraries",
+        subItem: [],
+      },
+      {
+        id: 6,
+        item: "Museums, exhibition halls, and art galleries",
+        subItem: [],
+      },
+      {
+        id: 7,
+        item: "Civic centers and community centers",
+        subItem: [],
+      },
+      {
+        id: 8,
+        item: "Places of worship, such as churches, mosques, temples, shrines, chapels,",
+        subItem: [],
+      },
+    ],
+    extrainformation: [
+      {
+        id: "",
+        title: "Building Density and Bulk Regulations",
+        regulations: [
+          {
+            id: 1,
+            regulations:
+              "Per relevant provisions of the NBC and this Ordinance",
+          },
+          {
+            id: 2,
+            regulations:
+              "The number of allowable storeys/floors above established grade is seven (7), provided, only the 1st and 2nd floor/storey is allowed for commercial use",
+          },
+          {
+            id: 3,
+            regulations:
+              "The Building Height Limit is 21.00 meters above highest grade as provided in the NBC",
+          },
+          {
+            id: 4,
+            regulations:
+              "Subject to national locational guidelines and standards of concerned agencies.",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 18,
+    code: "hdm",
+    title: `Regulations in High Density Mixed-Use Development Zone (MD-3)`,
+    descriptions: ``,
+    uses: [
+      {
+        id: 1,
+        item: "All uses allowed in C-1 Zone",
+        subItem: [],
+      },
+      {
+        id: 2,
+        item: "All uses allowed in R-1 and R-2, R3 except residential subdivisions (single-detached, attached, duplex, rowhouses)",
+        subItem: [],
+      },
+      {
+        id: 3,
+        item: "Townhouses",
+        subItem: [],
+      },
+      {
+        id: 4,
+        item: "Medium Rise Building/Development for Socialized Housing program",
+        subItem: [],
+      },
+      {
+        id: 5,
+        item: "Learning facilities such as training centers, seminar halls, and libraries",
+        subItem: [],
+      },
+      {
+        id: 6,
+        item: "Museums, exhibition halls, and art galleries",
+        subItem: [],
+      },
+      {
+        id: 7,
+        item: "Civic centers and community centers",
+        subItem: [],
+      },
+      {
+        id: 8,
+        item: "Places of worship, such as churches, mosques, temples, shrines, chapels,",
+        subItem: [],
+      },
+    ],
+    extrainformation: [
+      {
+        id: "",
+        title: "Building Density and Bulk Regulations",
+        regulations: [
+          {
+            id: 1,
+            regulations:
+              "Per relevant provisions of the NBC and this Ordinance",
+          },
+          {
+            id: 2,
+            regulations:
+              "The number of allowable storeys/floors above established grade is twelve (12), provided, only the 1st and 2nd floor/storey is allowed for commercial use",
+          },
+          {
+            id: 3,
+            regulations:
+              "The Building Height Limit is 36.00 meters above highest grade as provided in the NBC",
+          },
+          {
+            id: 4,
+            regulations:
+              "Subject to national locational guidelines and standards of concerned agencies.",
+          },
+        ],
+      },
+    ],
+  },
 ];

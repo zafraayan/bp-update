@@ -72,6 +72,11 @@ export const zoncertstyles = StyleSheet.create({
     textAlign: "left",
   },
 
+  conditiontitle: {
+    paddingTop: 10,
+    fontWeight: 600,
+  },
+
   list: {
     textAlign: "justify",
     marginLeft: 5,

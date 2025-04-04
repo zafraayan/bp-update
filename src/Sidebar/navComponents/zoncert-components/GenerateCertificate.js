@@ -16,7 +16,9 @@ import bullet from "../../../images/bullet.png";
 import subbullet from "../../../images/subbullet.png";
 
 function GenerateCertificate() {
-  const [code, setCode] = useState("htz");
+  const [code, setCode] = useState("hdm");
+
+  regulations.map((el) => console.log(el.extrainformation));
 
   return (
     <PDFViewer style={zoncertstyles.size}>
@@ -159,11 +161,18 @@ function GenerateCertificate() {
                           </View>
                         ))}
                         {el.regulations.map((el) => (
-                          <Text>{el.regulations}</Text>
+                          <Text>{el.title}</Text>
                         ))}
                       </>
                     ))}
-                    <Text style={zoncertstyles.conditions}>Conditions:</Text>
+                    <Text
+                      style={[
+                        zoncertstyles.conditions,
+                        zoncertstyles.conditiontitle,
+                      ]}
+                    >
+                      Conditions:
+                    </Text>
                     <View style={zoncertstyles.conditionItem}>
                       <Text style={zoncertstyles.conditions}>
                         1. This certification shall not be considered as a
