@@ -11,4 +11,40 @@ uses
 		subuses
 			id
 			title
-			
+
+extra information
+id
+title
+regulations
+	id
+	regulations
+
+
+tz - Regulations on Tourism Zone
+r1 - Regulations on Residential–1 (R-1) Zone.
+r2 - Regulations in Residential–2 (R-2) Zone.
+r3 - Regulations in Residential -3 (R-3) Zone.
+pa - Regulations in Production Agricultural Sub-Zone.
+nspsz - Regulations in NIPAS: Strict Protection Sub-Zone.
+siz - Regulations in Special Institutional Zone.
+frs - Regulations in Forest Reserve Sub-Zone.
+htz - Regulations in Heritage Overlay Zone (HTG-OZ).
+etz - Regulations in Eco-Tourism Zone.
+c1 - Regulations in Commercial – 1 (C-1) Zone.
+c2 - Regulations in Commercial – 2 (C-2) Zone.
+c3 - Regulations in Commercial – 3 (C-3) Zone.
+af - Regulations in Agro-Forestry Zone.
+aiz - Regulations in Agri-Industrial Zone.
+mdm - Regulations in Medium Density Mixed-Use Development Zone (MD-2)
+ldm1a - Regulations in Low Density Mixed-Use Development Zone (MD-1A)
+ldm1b - Regulations in Low Density Mixed-Use Development Zone (MD-1B)
+hdm - Regulations in High Density Mixed-Use Development Zone (MD-3)
+
+ 
+
+
+
+
+
+
+

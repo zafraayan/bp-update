@@ -833,7 +833,7 @@ export const regulations = [
   {
     id: 5,
     code: "pa",
-    title: `Production Agricultural Sub-Zone.`,
+    title: `Regulations in Production Agricultural Sub-Zone.`,
     descriptions: `These are areas that are outside of NPAAAD and declared by the City for agricultural use.`,
     uses: [
       {
@@ -981,7 +981,7 @@ export const regulations = [
   {
     id: 6,
     code: "nspsz",
-    title: `NIPAS: Strict Protection Sub-Zone.`,
+    title: `Regulations in NIPAS: Strict Protection Sub-Zone.`,
     descriptions: `Per the NIPAS Act, this is an area that have “…high bio-diversity value which shall be closed to all human activity except for scientific studies and/ or ceremonial or religious use by indigenous communities.”`,
     uses: [
       {
@@ -2522,7 +2522,7 @@ export const regulations = [
   {
     id: 18,
     code: "ldm1b",
-    title: `Regulations in Low Density Mixed-Use Development Zone (MD-1A)`,
+    title: `Regulations in Low Density Mixed-Use Development Zone (MD-1B)`,
     descriptions: ``,
     uses: [
       {

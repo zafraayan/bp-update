@@ -88,8 +88,8 @@ function Home() {
         <MainWrapper>
           <HeaderWrapper></HeaderWrapper>
           <BodyWrapper>
-            {/* {comps} */}
-            <GenerateCertificate />
+            {comps}
+            {/* <GenerateCertificate /> */}
           </BodyWrapper>
 
           {/* <FooterWrapper>Footer</FooterWrapper> */}
