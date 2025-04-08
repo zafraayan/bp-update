@@ -1,6 +1,11 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import { barangay } from "../../array/arrays";
+import { useForm } from "react-hook-form";
+import ZonCertCrud from "../../../database/ZonCertCrud";
+import { Toaster } from "react-hot-toast";
+import { marker } from "leaflet";
+import { useNavigate } from "react-router";
 
 const ZoningFormWrapper = styled.div`
   margin-top: 20px;
@@ -8,7 +13,7 @@ const ZoningFormWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 20px;
+  gap: 10px;
 `;
 
 const Input = styled.input`
@@ -54,36 +59,106 @@ const Button = styled.button`
   }
 `;
 
-function ZoningForm({ landuse, markerPosition }) {
+function ZoningForm({ landuseset, landuse, markerPosition, zoneCode }) {
+  const { register, handleSubmit, reset, watch } = useForm();
+  const { useZoncertInsert } = ZonCertCrud();
+  const [resetCoor, setResetcoor] = useState();
+
+  useEffect(() => {
+    setResetcoor(
+      `${markerPosition.lat.toFixed(5)}, ${markerPosition.lng.toFixed(5)}`
+    );
+  }, [markerPosition]);
+
+  function onSubmit(data1) {
+    createmutation.mutate(data1);
+  }
+
+  const sqm = watch("area");
+  const hectaresval = sqm / 10000;
+
+  const createmutation = useZoncertInsert(reset, setResetcoor, landuseset);
+
   return (
-    <ZoningFormWrapper>
-      <Input type="date"></Input>
-      <Select>
-        {barangay.map((el, i) => (
-          <option key={i}>{el}</option>
-        ))}
-      </Select>
-      <Input type="number" placeholder="Area"></Input>
-      <Input type="text" placeholder="Last Name"></Input>
-      <Input type="text" placeholder="First Name"></Input>
-      <Input type="text" placeholder="Middle Name"></Input>
-      <Input type="text" placeholder="Lot Number"></Input>
-      <Input type="text" placeholder="TCT Number"></Input>
-      <Input type="number" placeholder="Area in hectares"></Input>
-      <InputReadonly
-        type="text"
-        placeholder="Zoning Classification"
-        value={landuse}
-      ></InputReadonly>
-      <InputReadonly
-        type="text"
-        placeholder="Coordinates"
-        value={`${markerPosition.lat.toFixed(5)}, ${markerPosition.lng.toFixed(
-          5
-        )}`}
-      ></InputReadonly>
-      <Button>Save</Button>
-    </ZoningFormWrapper>
+    <>
+      <Toaster />
+      <form onSubmit={handleSubmit(onSubmit)}>
+        <ZoningFormWrapper>
+          <Input type="date" {...register("date")}></Input>
+          <Select {...register("barangay")}>
+            {barangay.map((el, i) => (
+              <option key={i}>{el}</option>
+            ))}
+          </Select>
+          <Input type="number" {...register("area")} placeholder="Area"></Input>
+          <Input
+            type="text"
+            {...register("lName")}
+            placeholder="Last Name"
+          ></Input>
+          <Input
+            type="text"
+            {...register("fName")}
+            placeholder="First Name"
+          ></Input>
+          <Input
+            type="text"
+            {...register("mName")}
+            placeholder="Middle Name"
+          ></Input>
+          <Input
+            type="text"
+            {...register("lotNumber")}
+            placeholder="Lot Number"
+          ></Input>
+          <Input
+            type="text"
+            {...register("tctNumber")}
+            placeholder="TCT Number"
+          ></Input>
+          <InputReadonly
+            type="text"
+            {...register("areaHectares")}
+            placeholder="Area in hectares"
+            value={hectaresval}
+          ></InputReadonly>
+          <InputReadonly
+            type="text"
+            {...register("zoningCode")}
+            placeholder="Zoning Code"
+            value={zoneCode}
+          ></InputReadonly>
+          <InputReadonly
+            type="text"
+            {...register("zoningClassification")}
+            placeholder="Zoning Classification"
+            value={landuse}
+          ></InputReadonly>
+          <InputReadonly
+            type="text"
+            {...register("coordinates")}
+            placeholder="Coordinates"
+            value={resetCoor}
+          ></InputReadonly>
+          <Input
+            type="text"
+            {...register("orNumber")}
+            placeholder="OR Number"
+          ></Input>
+          <Input
+            type="date"
+            {...register("orDate")}
+            placeholder="OR Date"
+          ></Input>
+          <Input
+            type="number"
+            {...register("amountPaid")}
+            placeholder="Amount Paid"
+          ></Input>
+          <Button onClick={handleSubmit(onSubmit)}>Save</Button>
+        </ZoningFormWrapper>
+      </form>
+    </>
   );
 }
 

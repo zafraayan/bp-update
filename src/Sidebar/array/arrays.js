@@ -18,6 +18,7 @@ import { AiFillSignature } from "react-icons/ai";
 import { MdOutlineRecordVoiceOver } from "react-icons/md";
 import { HiDocumentReport } from "react-icons/hi";
 import GenerateCertificate from "../navComponents/zoncert-components/GenerateCertificate";
+import ZoncertRecords from "../navComponents/zoncert-components/ZoncertRecords";
 
 export const navItems = [
   {
@@ -76,13 +77,13 @@ export const navItems = [
     id: 3,
     title: "Zoning Certificate",
     subMenu: [
-      {
-        id: 1,
-        title: "Generate Certificate",
-        icon: <RiAiGenerate />,
-        path: "",
-        component: <GenerateCertificate />,
-      },
+      // {
+      //   id: 1,
+      //   title: "Generate Certificate",
+      //   icon: <RiAiGenerate />,
+      //   path: "",
+      //   component: <GenerateCertificate />,
+      // },
     ],
     icon: <HiDocumentChartBar />,
     path: "",

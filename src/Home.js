@@ -89,7 +89,7 @@ function Home() {
           <HeaderWrapper></HeaderWrapper>
           <BodyWrapper>
             {comps}
-            {/* <GenerateCertificate /> */}
+            {/* <ZoningCertificate /> */}
           </BodyWrapper>
 
           {/* <FooterWrapper>Footer</FooterWrapper> */}

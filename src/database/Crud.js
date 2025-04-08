@@ -1,7 +1,8 @@
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
-import { supabase } from "./supabase";
+
 import React, { useEffect, useState } from "react";
 import toast from "react-hot-toast";
+import { supabase } from "./supabase";
 
 function Crud() {
   function useData() {

@@ -16,7 +16,7 @@ import EvaluationReport from "./print-components/EvaluationReport";
 
 function PrintDownload() {
   const toPrint = useSelector((state) => state.business.toPrint);
-  console.log(toPrint);
+
   return (
     <>
       <h1>Print / Download </h1>

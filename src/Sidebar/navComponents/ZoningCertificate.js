@@ -15,6 +15,7 @@ import L from "leaflet";
 import markerIcon from "leaflet/dist/images/marker-icon.png";
 import { CgCloseR } from "react-icons/cg";
 import { regulations } from "../array/arrays";
+import { useForm } from "react-hook-form";
 
 const ZcWrapper = styled.div`
   display: flex;
@@ -24,15 +25,17 @@ const ZcWrapper = styled.div`
 
 const FormWrapper = styled.div`
   width: 50%;
-  height: auto;
+  /* height: auto; */
   background-color: #393b40;
   border-radius: 20px;
   padding: 10px;
   position: relative;
+  overflow-y: auto;
+  height: 800px;
 `;
 
 const MapWrapper = styled(MapContainer)`
-  height: 90vh;
+  height: 800px;
   width: 100%;
   border-radius: 20px;
 `;
@@ -87,12 +90,13 @@ const FeatureOpacity = styled(ButtonAdjustment)`
 const ZoningCertificate = () => {
   const [geojsonData, setGeojsonData] = useState(null);
   const [landuse, setLanduse] = useState();
+  const [zoneCode, setZonecode] = useState();
   const [showForm, setShowform] = useState(false);
   const [showmap, setShowmap] = useState(true);
   const [showfeatures, setShowfeatures] = useState(true);
   const [mapview, setMapview] = useState(false);
-  const [opacity, setOpacity] = useState(1);
-  const [opacityVal, setOapcityVal] = useState(100);
+  const [opacity, setOpacity] = useState(0.5);
+  const [opacityVal, setOapcityVal] = useState(50);
   const [markerPosition, setMarkerPosition] = useState(null);
   // const [streetmap, setStreetmap] = useState(false);
 
@@ -124,7 +128,7 @@ const ZoningCertificate = () => {
     fillOpacity: opacityRef.current,
     weight: 1,
     opacity: 1,
-    color: "black",
+    color: "white",
   });
 
   // Function to add popups on each feature
@@ -141,6 +145,7 @@ const ZoningCertificate = () => {
         //   )
         //   .openPopup();
         setLanduse(feature.properties.zcode);
+        setZonecode(feature.properties.ZoneCode);
         setShowform(true);
       },
 
@@ -148,10 +153,10 @@ const ZoningCertificate = () => {
         const hoveredLayer = e.target;
         // layer.bindPopup(`<b>${feature.properties.zcode}</b>`).openPopup();
         hoveredLayer.setStyle({
-          fillColor: "gray", // Color on hover
+          fillColor: "white", // Color on hover
           fillOpacity: opacityRef.current,
           // weight: 3,
-          color: "black",
+          color: "white",
         });
       },
       mouseout: (e) => {
@@ -190,42 +195,52 @@ const ZoningCertificate = () => {
     popupAnchor: [0, -32],
   });
 
+  const { register, onSubmit, reset } = useForm();
+  console.log(zoneCode);
+
   return (
     <ZcWrapper>
       {showForm && (
         <FormWrapper>
-          <form onSubmit={(e) => e.preventDefault()}>
-            <h2>Client's Information</h2>
-            <ZoningForm landuse={landuse} markerPosition={markerPosition} />
+          {/* <form onSubmit={(e) => e.preventDefault()}> */}
+          <h2>Client's Information</h2>
+          <ZoningForm
+            // register={register}
+            // save={onSubmit}
+            landuseset={setLanduse}
+            landuse={landuse}
+            zoneCode={zoneCode}
+            markerPosition={markerPosition}
+          />
 
-            <CloseButton onClick={() => setShowform(false)}>
-              <CgCloseR />
-            </CloseButton>
-            <MapAdjustContainer>
-              <ButtonAdjustment onClick={() => setShowmap(!showmap)}>
-                {showmap ? "Hide Overlay" : "Show Overlay"}
-              </ButtonAdjustment>
-              <ButtonAdjustment onClick={() => setShowfeatures(!showfeatures)}>
-                {showfeatures ? "Hide Features" : "Show Features"}
-              </ButtonAdjustment>
-              <ButtonAdjustment onClick={handleMapView}>
-                {mapview ? "Satellite View" : "Streetmap View"}
-              </ButtonAdjustment>
-            </MapAdjustContainer>
-            <FeatureOpacity>
-              <label>Feature Opacity:</label>
-              <input
-                type="range"
-                id="volume"
-                name="volume"
-                min="0"
-                max="100"
-                value={opacityVal}
-                onChange={handleOpacity}
-              />
-              {`${opacityVal}% `}
-            </FeatureOpacity>
-          </form>
+          <CloseButton onClick={() => setShowform(false)}>
+            <CgCloseR />
+          </CloseButton>
+          <MapAdjustContainer>
+            <ButtonAdjustment onClick={() => setShowmap(!showmap)}>
+              {showmap ? "Hide Overlay" : "Show Overlay"}
+            </ButtonAdjustment>
+            <ButtonAdjustment onClick={() => setShowfeatures(!showfeatures)}>
+              {showfeatures ? "Hide Features" : "Show Features"}
+            </ButtonAdjustment>
+            <ButtonAdjustment onClick={handleMapView}>
+              {mapview ? "Satellite View" : "Streetmap View"}
+            </ButtonAdjustment>
+          </MapAdjustContainer>
+          <FeatureOpacity>
+            <label>Feature Opacity:</label>
+            <input
+              type="range"
+              id="volume"
+              name="volume"
+              min="0"
+              max="100"
+              value={opacityVal}
+              onChange={handleOpacity}
+            />
+            {`${opacityVal}% `}
+          </FeatureOpacity>
+          {/* </form> */}
         </FormWrapper>
       )}
       <MapWrapper center={[10.288613081875678, 123.81768171707611]} zoom={13}>
