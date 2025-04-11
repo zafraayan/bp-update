@@ -13,11 +13,11 @@ export const zoncertstyles = StyleSheet.create({
     fontSize: "11px",
     width: "100%",
     // padding: 30,
-    paddingTop: 30,
+    paddingTop: 20,
     // paddingBottom: 48,
     paddingBottom: 48,
-    paddingLeft: 30,
-    paddingRight: 30,
+    paddingLeft: 20,
+    paddingRight: 20,
     textAlign: "center",
   },
 
@@ -53,10 +53,14 @@ export const zoncertstyles = StyleSheet.create({
 
   cellHeading: {
     width: "100%",
-    fontWeight: "600",
+  },
+
+  cellHeadingTop: {
+    fontWeight: 600,
   },
 
   cellContent: {
+    fontWeight: "600",
     width: "100%",
   },
 

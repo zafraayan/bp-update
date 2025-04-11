@@ -89,7 +89,7 @@ const FeatureOpacity = styled(ButtonAdjustment)`
 
 const ZoningCertificate = () => {
   const [geojsonData, setGeojsonData] = useState(null);
-  const [landuse, setLanduse] = useState();
+  const [landuse, setLanduse] = useState([]);
   const [zoneCode, setZonecode] = useState();
   const [showForm, setShowform] = useState(false);
   const [showmap, setShowmap] = useState(true);
@@ -98,6 +98,7 @@ const ZoningCertificate = () => {
   const [opacity, setOpacity] = useState(0.5);
   const [opacityVal, setOapcityVal] = useState(50);
   const [markerPosition, setMarkerPosition] = useState(null);
+  const [testMarker, setTestmarker] = useState([]);
   // const [streetmap, setStreetmap] = useState(false);
 
   const opacityRef = useRef(opacity);
@@ -144,9 +145,11 @@ const ZoningCertificate = () => {
         //     `<b>${feature.properties.zcode}</b> - <b>${feature.properties.ZoneCode}</b>`
         //   )
         //   .openPopup();
-        setLanduse(feature.properties.zcode);
+        setLanduse((prev) => [...prev, feature.properties.zcode]);
         setZonecode(feature.properties.ZoneCode);
         setShowform(true);
+        setMarkerPosition(e.latlng);
+        setTestmarker((prev) => [...prev, feature.properties.ZoneCode]);
       },
 
       mouseover: (e) => {
@@ -181,7 +184,7 @@ const ZoningCertificate = () => {
   function ClickHandler() {
     useMapEvents({
       click: (e) => {
-        setMarkerPosition(e.latlng); // Set marker position on click
+        // setMarkerPosition(e.latlng); // Set marker position on click
       },
     });
     return null;
@@ -196,7 +199,6 @@ const ZoningCertificate = () => {
   });
 
   const { register, onSubmit, reset } = useForm();
-  console.log(zoneCode);
 
   return (
     <ZcWrapper>
@@ -211,6 +213,9 @@ const ZoningCertificate = () => {
             landuse={landuse}
             zoneCode={zoneCode}
             markerPosition={markerPosition}
+            tmarker={testMarker}
+            stmarker={setTestmarker}
+            stlanduse={setLanduse}
           />
 
           <CloseButton onClick={() => setShowform(false)}>

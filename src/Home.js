@@ -23,7 +23,7 @@ const Wrapper = styled.div`
   background-color: #525d64;
   color: #ffffff;
   height: 100dvh;
-  width: 80dvw;
+  width: 100dvw;
   min-width: 1024px;
   min-height: 726px;
   margin: auto;

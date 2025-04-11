@@ -59,7 +59,15 @@ const Button = styled.button`
   }
 `;
 
-function ZoningForm({ landuseset, landuse, markerPosition, zoneCode }) {
+function ZoningForm({
+  landuseset,
+  landuse,
+  markerPosition,
+  zoneCode,
+  tmarker,
+  stmarker,
+  stlanduse,
+}) {
   const { register, handleSubmit, reset, watch } = useForm();
   const { useZoncertInsert } = ZonCertCrud();
   const [resetCoor, setResetcoor] = useState();
@@ -74,10 +82,21 @@ function ZoningForm({ landuseset, landuse, markerPosition, zoneCode }) {
     createmutation.mutate(data1);
   }
 
+  function handleReset(e) {
+    stmarker([]);
+    stlanduse([]);
+    reset();
+  }
+
   const sqm = watch("area");
   const hectaresval = sqm / 10000;
 
-  const createmutation = useZoncertInsert(reset, setResetcoor, landuseset);
+  const createmutation = useZoncertInsert(
+    reset,
+    setResetcoor,
+    landuseset,
+    tmarker
+  );
 
   return (
     <>
@@ -126,13 +145,13 @@ function ZoningForm({ landuseset, landuse, markerPosition, zoneCode }) {
             type="text"
             {...register("zoningCode")}
             placeholder="Zoning Code"
-            value={zoneCode}
+            value={tmarker.map((el) => el)}
           ></InputReadonly>
           <InputReadonly
             type="text"
             {...register("zoningClassification")}
             placeholder="Zoning Classification"
-            value={landuse}
+            value={landuse.map((el) => el)}
           ></InputReadonly>
           <InputReadonly
             type="text"
@@ -158,6 +177,7 @@ function ZoningForm({ landuseset, landuse, markerPosition, zoneCode }) {
           <Button onClick={handleSubmit(onSubmit)}>Save</Button>
         </ZoningFormWrapper>
       </form>
+      <Button onClick={() => handleReset()}>Reset</Button>
     </>
   );
 }

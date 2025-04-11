@@ -27,7 +27,7 @@ function ZonCertCrud() {
     });
   }
 
-  function useZoncertInsert(reset, setResetcoor, landuseset) {
+  function useZoncertInsert(reset, setResetcoor, landuseset, tmarker) {
     const queryClient = useQueryClient();
     return useMutation({
       mutationFn: async (newItem) => {
@@ -41,7 +41,9 @@ function ZonCertCrud() {
           reset();
           setResetcoor("");
           landuseset("");
-          navigate("./zoncertrecords", { state: { newItem } });
+          navigate("./zoncertrecords", {
+            state: { newItem },
+          });
         }
       },
       onSuccess: () => {
