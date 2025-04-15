@@ -89,7 +89,7 @@ const FeatureOpacity = styled(ButtonAdjustment)`
 
 const ZoningCertificate = () => {
   const [geojsonData, setGeojsonData] = useState(null);
-  const [landuse, setLanduse] = useState([]);
+  const [landuse, setLanduse] = useState();
   const [zoneCode, setZonecode] = useState();
   const [showForm, setShowform] = useState(false);
   const [showmap, setShowmap] = useState(true);
@@ -145,11 +145,11 @@ const ZoningCertificate = () => {
         //     `<b>${feature.properties.zcode}</b> - <b>${feature.properties.ZoneCode}</b>`
         //   )
         //   .openPopup();
-        setLanduse((prev) => [...prev, feature.properties.zcode]);
+        setLanduse(feature.properties.zcode);
         setZonecode(feature.properties.ZoneCode);
         setShowform(true);
         setMarkerPosition(e.latlng);
-        setTestmarker((prev) => [...prev, feature.properties.ZoneCode]);
+        setTestmarker(feature.properties.ZoneCode);
       },
 
       mouseover: (e) => {

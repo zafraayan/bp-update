@@ -71,12 +71,20 @@ function ZoningForm({
   const { register, handleSubmit, reset, watch } = useForm();
   const { useZoncertInsert } = ZonCertCrud();
   const [resetCoor, setResetcoor] = useState();
+  const [areaVal, setAreaVal] = useState();
 
   useEffect(() => {
     setResetcoor(
       `${markerPosition.lat.toFixed(5)}, ${markerPosition.lng.toFixed(5)}`
     );
   }, [markerPosition]);
+
+  useEffect(() => {
+    const sqm = watch("area");
+    const hectaresval = sqm / 10000;
+
+    setAreaVal(hectaresval);
+  }, [areaVal]);
 
   function onSubmit(data1) {
     createmutation.mutate(data1);
@@ -87,9 +95,6 @@ function ZoningForm({
     stlanduse([]);
     reset();
   }
-
-  const sqm = watch("area");
-  const hectaresval = sqm / 10000;
 
   const createmutation = useZoncertInsert(
     reset,
@@ -135,23 +140,23 @@ function ZoningForm({
             {...register("tctNumber")}
             placeholder="TCT Number"
           ></Input>
-          <InputReadonly
+          <Input
             type="text"
             {...register("areaHectares")}
             placeholder="Area in hectares"
-            value={hectaresval}
-          ></InputReadonly>
+            value={areaVal ? 0 : Number(areaVal)}
+          ></Input>
           <InputReadonly
             type="text"
             {...register("zoningCode")}
             placeholder="Zoning Code"
-            value={tmarker.map((el) => el)}
+            value={tmarker}
           ></InputReadonly>
           <InputReadonly
             type="text"
             {...register("zoningClassification")}
             placeholder="Zoning Classification"
-            value={landuse.map((el) => el)}
+            value={landuse}
           ></InputReadonly>
           <InputReadonly
             type="text"

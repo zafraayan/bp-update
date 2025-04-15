@@ -185,90 +185,84 @@ const MyDocument = ({ state }) => (
               64 (s.2021).
             </Text>
 
-            {zaf.map((zafcode) =>
-              regulations.map(
-                (el) =>
-                  el.code === zafcode && (
-                    <View>
-                      <Text style={zoncertstyles.regtitle}>{el.title}</Text>
-                      <Text style={zoncertstyles.paragraph}>
-                        {el.descriptions}
-                      </Text>
-                      <Text style={zoncertstyles.regtitle}>Allowable Uses</Text>
-                      <ul>
-                        {el.uses.map((el) => (
-                          <>
-                            <li>
-                              <View style={zoncertstyles.rowList}>
-                                <Image
-                                  style={zoncertstyles.bullet}
-                                  src={bullet}
-                                ></Image>
-                                <Text style={zoncertstyles.list}>
-                                  {el.item}
-                                </Text>
-                              </View>
-                              <ul>
-                                {el.subItem.map((el) => (
-                                  <li>
-                                    <View style={zoncertstyles.rowSubList}>
-                                      <Image
-                                        style={zoncertstyles.bullet}
-                                        src={subbullet}
-                                      ></Image>
-                                      <Text style={zoncertstyles.subList}>
-                                        {el.item}
-                                      </Text>
-                                    </View>
-                                    <ul>
-                                      {el.subuses?.map((el) => (
-                                        <li>
-                                          <View
-                                            style={zoncertstyles.rowSubsubList}
-                                          >
-                                            <Image
-                                              style={zoncertstyles.bullet}
-                                              src={subbullet}
-                                            ></Image>
-                                            <Text style={zoncertstyles.subList}>
-                                              {el.title}
-                                            </Text>
-                                          </View>
-                                        </li>
-                                      ))}
-                                    </ul>
-                                  </li>
-                                ))}
-                              </ul>
-                            </li>
-                          </>
-                        ))}
-                      </ul>
-
-                      {el.extrainformation.map((el) => (
+            {regulations.map(
+              (el) =>
+                el.code === print?.zoningCode && (
+                  <View>
+                    <Text style={zoncertstyles.regtitle}>{el.title}</Text>
+                    <Text style={zoncertstyles.paragraph}>
+                      {el.descriptions}
+                    </Text>
+                    <Text style={zoncertstyles.regtitle}>Allowable Uses</Text>
+                    <ul>
+                      {el.uses.map((el) => (
                         <>
-                          <Text style={zoncertstyles.extrainfo}>
-                            {el.title}
-                          </Text>
-                          {el.regulations.map((el) => (
+                          <li>
                             <View style={zoncertstyles.rowList}>
                               <Image
                                 style={zoncertstyles.bullet}
                                 src={bullet}
                               ></Image>
-                              <Text style={zoncertstyles.list}>
-                                {el.regulations}
-                              </Text>
+                              <Text style={zoncertstyles.list}>{el.item}</Text>
                             </View>
-                          ))}
-                          {el.regulations.map((el) => (
-                            <Text>{el.title}</Text>
-                          ))}
+                            <ul>
+                              {el.subItem.map((el) => (
+                                <li>
+                                  <View style={zoncertstyles.rowSubList}>
+                                    <Image
+                                      style={zoncertstyles.bullet}
+                                      src={subbullet}
+                                    ></Image>
+                                    <Text style={zoncertstyles.subList}>
+                                      {el.item}
+                                    </Text>
+                                  </View>
+                                  <ul>
+                                    {el.subuses?.map((el) => (
+                                      <li>
+                                        <View
+                                          style={zoncertstyles.rowSubsubList}
+                                        >
+                                          <Image
+                                            style={zoncertstyles.bullet}
+                                            src={subbullet}
+                                          ></Image>
+                                          <Text style={zoncertstyles.subList}>
+                                            {el.title}
+                                          </Text>
+                                        </View>
+                                      </li>
+                                    ))}
+                                  </ul>
+                                </li>
+                              ))}
+                            </ul>
+                          </li>
                         </>
                       ))}
-                    </View>
-                  )
-              )
+                    </ul>
+
+                    {el.extrainformation.map((el) => (
+                      <>
+                        <Text style={zoncertstyles.extrainfo}>{el.title}</Text>
+                        {el.regulations.map((el) => (
+                          <View style={zoncertstyles.rowList}>
+                            <Image
+                              style={zoncertstyles.bullet}
+                              src={bullet}
+                            ></Image>
+                            <Text style={zoncertstyles.list}>
+                              {el.regulations}
+                            </Text>
+                          </View>
+                        ))}
+                        {el.regulations.map((el) => (
+                          <Text>{el.title}</Text>
+                        ))}
+                      </>
+                    ))}
+                  </View>
+                )
             )}
           </View>
           <Text
@@ -289,11 +283,11 @@ const MyDocument = ({ state }) => (
             </Text>
             <Text style={zoncertstyles.conditions}>
               3. Any misrepresentation or material falsehood on the part of the
-              applicant shall be suficient cause for the cancellation of this
+              applicant shall be sufficient cause for the cancellation of this
               certification.
             </Text>
             <Text style={zoncertstyles.conditions}>
-              {`Issued this`}{" "}
+              {`Issued this`}
               <Text style={zoncertstyles.cellHeadingTop}>
                 {`${formatOrdinal(new Date().getDate())}`}
               </Text>
