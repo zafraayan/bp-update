@@ -144,7 +144,7 @@ function ZoningForm({
             type="text"
             {...register("areaHectares")}
             placeholder="Area in hectares"
-            value={areaVal ? 0 : Number(areaVal)}
+            value={areaVal}
           ></Input>
           <InputReadonly
             type="text"
