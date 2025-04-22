@@ -12,13 +12,13 @@ export const zoncertstyles = StyleSheet.create({
     // flexDirection: "row",
     fontSize: "11px",
     width: "100%",
-    // padding: 30,
-    paddingTop: 20,
-    // paddingBottom: 48,
-    paddingBottom: 48,
-    paddingLeft: 20,
-    paddingRight: 20,
     textAlign: "center",
+    padding: 30,
+  },
+
+  contentWrapper: {
+    flexGrow: 1,
+    backgroundColor: "orange",
   },
 
   h1: {

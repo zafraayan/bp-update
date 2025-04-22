@@ -105,12 +105,12 @@ function ZoncertRecords() {
 export default ZoncertRecords;
 
 // const [code, setCode] = useState("etz");
-const zaf = ["r1", "pa"];
+
 const MyDocument = ({ state }) => (
   <Document>
     <Page size="Folio" style={zoncertstyles.page}>
       {Object.values(state).map((print) => (
-        <>
+        <View style={zoncertstyles.contentWrapper}>
           <View>
             <Header />
             <Text style={zoncertstyles.h1}>ZONING CERTIFICATION</Text>
@@ -287,7 +287,7 @@ const MyDocument = ({ state }) => (
               certification.
             </Text>
             <Text style={zoncertstyles.conditions}>
-              {`Issued this`}
+              {`Issued this `}
               <Text style={zoncertstyles.cellHeadingTop}>
                 {`${formatOrdinal(new Date().getDate())}`}
               </Text>
@@ -326,7 +326,7 @@ const MyDocument = ({ state }) => (
               <Text>Amount: {print?.amountPaid}</Text>
             </View>
           </View>
-        </>
+        </View>
       ))}
     </Page>
   </Document>

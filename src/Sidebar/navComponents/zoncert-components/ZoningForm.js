@@ -68,7 +68,7 @@ function ZoningForm({
   stmarker,
   stlanduse,
 }) {
-  const { register, handleSubmit, reset, watch } = useForm();
+  const { register, handleSubmit, reset, watch, setValue } = useForm();
   const { useZoncertInsert } = ZonCertCrud();
   const [resetCoor, setResetcoor] = useState();
   const [areaVal, setAreaVal] = useState();
@@ -79,12 +79,14 @@ function ZoningForm({
     );
   }, [markerPosition]);
 
-  useEffect(() => {
-    const sqm = watch("area");
-    const hectaresval = sqm / 10000;
+  const area = watch("area");
 
-    setAreaVal(hectaresval);
-  }, [areaVal]);
+  // Update areaHectares whenever area changes
+  useEffect(() => {
+    if (area !== undefined) {
+      setValue("areaHectares", area / 10000);
+    }
+  }, [area, setValue]);
 
   function onSubmit(data1) {
     createmutation.mutate(data1);
@@ -140,12 +142,12 @@ function ZoningForm({
             {...register("tctNumber")}
             placeholder="TCT Number"
           ></Input>
-          <Input
-            type="text"
+          <InputReadonly
+            type="number"
             {...register("areaHectares")}
             placeholder="Area in hectares"
-            value={areaVal}
-          ></Input>
+            readOnly
+          ></InputReadonly>
           <InputReadonly
             type="text"
             {...register("zoningCode")}
@@ -182,7 +184,7 @@ function ZoningForm({
           <Button onClick={handleSubmit(onSubmit)}>Save</Button>
         </ZoningFormWrapper>
       </form>
-      <Button onClick={() => handleReset()}>Reset</Button>
+      {/* <Button onClick={() => handleReset()}>Reset</Button> */}
     </>
   );
 }
