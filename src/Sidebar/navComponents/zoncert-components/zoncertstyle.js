@@ -18,7 +18,6 @@ export const zoncertstyles = StyleSheet.create({
 
   contentWrapper: {
     flexGrow: 1,
-    backgroundColor: "orange",
   },
 
   h1: {

@@ -98,6 +98,7 @@ export const styles = StyleSheet.create({
     fontSize: 12,
     paddingBottom: 1,
     paddingTop: 1,
+    textTransform: "uppercase",
   },
 
   // ----------------------------------------

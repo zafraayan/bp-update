@@ -106,7 +106,7 @@ export default ZoncertRecords;
 
 // const [code, setCode] = useState("etz");
 
-const MyDocument = ({ state }) => (
+export const MyDocument = ({ state }) => (
   <Document>
     <Page size="Folio" style={zoncertstyles.page}>
       {Object.values(state).map((print) => (
@@ -198,7 +198,7 @@ const MyDocument = ({ state }) => (
                       {el.uses.map((el) => (
                         <>
                           <li>
-                            <View style={zoncertstyles.rowList}>
+                            <View wrap={false} style={zoncertstyles.rowList}>
                               <Image
                                 style={zoncertstyles.bullet}
                                 src={bullet}
@@ -208,7 +208,10 @@ const MyDocument = ({ state }) => (
                             <ul>
                               {el.subItem.map((el) => (
                                 <li>
-                                  <View style={zoncertstyles.rowSubList}>
+                                  <View
+                                    wrap={false}
+                                    style={zoncertstyles.rowSubList}
+                                  >
                                     <Image
                                       style={zoncertstyles.bullet}
                                       src={subbullet}
@@ -221,6 +224,7 @@ const MyDocument = ({ state }) => (
                                     {el.subuses?.map((el) => (
                                       <li>
                                         <View
+                                          wrap={false}
                                           style={zoncertstyles.rowSubsubList}
                                         >
                                           <Image
@@ -265,12 +269,14 @@ const MyDocument = ({ state }) => (
                 )
             )}
           </View>
-          <Text
-            style={[zoncertstyles.conditions, zoncertstyles.conditiontitle]}
-          >
-            Conditions:
-          </Text>
-          <View style={zoncertstyles.conditionItem}>
+
+          {/* turn off the wrap if the page breaks*/}
+          <View wrap={false} style={zoncertstyles.conditionItem}>
+            <Text
+              style={[zoncertstyles.conditions, zoncertstyles.conditiontitle]}
+            >
+              Conditions:
+            </Text>
             <Text style={zoncertstyles.conditions}>
               1. This certification shall not be considered as a locational
               clearance / certificate of zoning conformance or development

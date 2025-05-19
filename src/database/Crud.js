@@ -75,7 +75,64 @@ function Crud() {
     });
   }
 
-  return { useData, useInsert, useUpdateItem, useDelete };
+  function useZoncertData() {
+    return useQuery({
+      queryKey: ["zoningCertification"],
+      queryFn: async () => {
+        const { data, error } = await supabase
+          .from("zoningCertification")
+          .select("*");
+        if (error) throw error;
+        return data;
+      },
+    });
+  }
+
+  const useZoncertUpdate = () => {
+    const queryClient = useQueryClient();
+    return useMutation({
+      mutationFn: async ({ id, updatedItem }) => {
+        const { data, error } = await supabase
+          .from("zoningCertification")
+          .update(updatedItem)
+          .eq("id", id);
+        if (error) throw error;
+        toast.success("Success!");
+        return data;
+      },
+      onSuccess: () => {
+        queryClient.invalidateQueries(["zoningCertification"]);
+      },
+    });
+  };
+
+  function useZoncertDelete() {
+    const queryClient = useQueryClient();
+    return useMutation({
+      mutationFn: async (id) => {
+        const { data, error } = await supabase
+          .from("zoningCertification")
+          .delete()
+          .eq("id", id)
+          .select();
+
+        if (error) console.log(error);
+      },
+      onSuccess: () => {
+        queryClient.invalidateQueries(["zoningCertification"]);
+      },
+    });
+  }
+
+  return {
+    useData,
+    useInsert,
+    useUpdateItem,
+    useDelete,
+    useZoncertData,
+    useZoncertDelete,
+    useZoncertUpdate,
+  };
 }
 
 export default Crud;

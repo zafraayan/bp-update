@@ -19,6 +19,9 @@ import { MdOutlineRecordVoiceOver } from "react-icons/md";
 import { HiDocumentReport } from "react-icons/hi";
 import GenerateCertificate from "../navComponents/zoncert-components/GenerateCertificate";
 import ZoncertRecords from "../navComponents/zoncert-components/ZoncertRecords";
+import Applicants from "../../Components/Applicants/Applicants";
+import ApplicantEdit from "../../Components/Applicants/ApplicantEdit";
+import ApplicantPrint from "../../Components/Applicants/ApplicantPrint";
 
 export const navItems = [
   {
@@ -77,13 +80,21 @@ export const navItems = [
     id: 3,
     title: "Zoning Certificate",
     subMenu: [
-      // {
-      //   id: 1,
-      //   title: "Generate Certificate",
-      //   icon: <RiAiGenerate />,
-      //   path: "",
-      //   component: <GenerateCertificate />,
-      // },
+      {
+        id: 1,
+        title: "Applicants",
+        icon: <RiAiGenerate />,
+        path: "",
+        component: <Applicants />,
+      },
+
+      {
+        id: 2,
+        title: "Applicant Print",
+        icon: <FaPrint />,
+        path: "",
+        component: <ApplicantPrint />,
+      },
     ],
     icon: <HiDocumentChartBar />,
     path: "",
@@ -1283,11 +1294,114 @@ export const regulations = [
   },
   {
     id: 10,
-    code: "etz",
+    code: "eto",
     title: `Regulations in Eco-Tourism Zone.`,
-    descriptions: `Data Not Available`,
-    uses: [],
-    extrainformation: [],
+    descriptions: `The objective for this Overlay Zone is to ensure that the dual goals of environmental conservation and tourism economic development are attained.`,
+    uses: [
+      {
+        id: 1,
+        item: "In addition to those uses that may be allowed in the Base Zone, the following are uses and activities that may be allowed in the Ecotourism Overlay Zone:",
+        subItem: [
+          {
+            id: 1,
+            item: "Accommodation facilities",
+            subuses: [],
+          },
+          {
+            id: 2,
+            item: "Boardwalks",
+            subuses: [],
+          },
+          {
+            id: 3,
+            item: "Dining facilities",
+            subuses: [],
+          },
+          {
+            id: 4,
+            item: "Dive shops/Diving lesson establishments",
+            subuses: [],
+          },
+          {
+            id: 5,
+            item: "Water-oriented recreation/sports rental equipment shops",
+            subuses: [],
+          },
+          {
+            id: 6,
+            item: "Tourism-oriented retail shops (e.g. souvenirs, clothes, etc.)",
+            subuses: [],
+          },
+          {
+            id: 7,
+            item: "Foreign exchange shops/establishments",
+            subuses: [],
+          },
+        ],
+      },
+    ],
+    extrainformation: [
+      {
+        id: 1,
+        title: "Building Density and Bulk Regulations",
+        regulations: [
+          {
+            id: 1,
+            regulations: `Ecotourism facilities such as resorts should have heights of no greater than 5meters from highest grade to roof apex line.`,
+          },
+          {
+            id: 2,
+            regulations: `The minimum setback of buildings from the inland foreshore line is (xx) meters.`,
+          },
+          {
+            id: 3,
+            regulations: `The maximum building footprint shall be 20% of the total lot area.`,
+          },
+        ],
+      },
+      {
+        id: 2,
+        title: "Building/Structure Design Regulations",
+        regulations: [
+          {
+            id: 1,
+            regulations: `Ecotourism facilities such as hotels, resorts, should be made of light indigenous materials.`,
+          },
+          {
+            id: 2,
+            regulations: `Designs should conform to the applicable standards of the Department of Tourism or DOT.`,
+          },
+          {
+            id: 3,
+            regulations: `Only single-detached or duplex structures shall be allowed.`,
+          },
+          {
+            id: 4,
+            regulations: `The freeboard elevation of buildings shall be 600mm measured from the outermost building line facing the foreshore to the building’s finish floor line.`,
+          },
+          {
+            id: 5,
+            regulations: `Buildings on stilts are encouraged.`,
+          },
+          {
+            id: 6,
+            regulations: `Electrical appliances should be raised with a minimum height of 600mm from each building’s finish floor line.`,
+          },
+          {
+            id: 7,
+            regulations: `The use of impermeable paving materials outside of building envelopes shall not be allowed.`,
+          },
+          {
+            id: 8,
+            regulations: `Only picket fences made of wood or bamboo and with heights no greater than 600mm shall be allowed.`,
+          },
+          {
+            id: 9,
+            regulations: `The use of firewalls along property lines shall not be allowed.`,
+          },
+        ],
+      },
+    ],
   },
   {
     id: 11,
