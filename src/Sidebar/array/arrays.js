@@ -23,6 +23,8 @@ import Applicants from "../../Components/Applicants/Applicants";
 import ApplicantEdit from "../../Components/Applicants/ApplicantEdit";
 import ApplicantPrint from "../../Components/Applicants/ApplicantPrint";
 
+export const compliance = ["Compliant", "Non-Compliant"];
+
 export const navItems = [
   {
     id: 1,

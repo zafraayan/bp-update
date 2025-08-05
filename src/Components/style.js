@@ -12,7 +12,7 @@ export const styles = StyleSheet.create({
     // flexDirection: "row",
     fontSize: "11px",
     width: "100%",
-    padding: "20px",
+    padding: "30px",
     textAlign: "center",
   },
 
@@ -110,11 +110,12 @@ export const styles = StyleSheet.create({
   conditionTitle: {
     position: "absolute",
     top: 10,
+    left: 2,
   },
 
   backgroundImage: {
     opacity: 0.2,
-    height: "330px",
+    height: "340px",
   },
 
   conditionItem: {

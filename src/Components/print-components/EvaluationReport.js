@@ -32,13 +32,15 @@ function EvaluationReport({ toPrint }) {
         </Text>
         <Text style={styles.fullWidth}>
           Name of Applicant:
-          <Text
-            style={styles.value}
-          >{` ${toPrint?.fName} ${toPrint?.mName} ${toPrint?.lName}`}</Text>
+          <Text style={styles.value}>
+            {` ${toPrint?.fName} ${toPrint?.mName.slice(0, 1)}. ${
+              toPrint?.lName
+            }`}
+          </Text>
         </Text>
         <Text style={styles.fullWidth}>
           Name of Establishment:
-          <Text style={styles.value}>{toPrint?.busName}</Text>
+          <Text style={styles.value}> {toPrint?.busName}</Text>
         </Text>
         <Text style={styles.twoColumns}>
           Location:
@@ -56,7 +58,7 @@ function EvaluationReport({ toPrint }) {
           </Text>
         </Text>
         <Text style={styles.fullWidth}>
-          Business Description:
+          Business Description:{" "}
           <Text style={styles.value}>{toPrint?.busType}</Text>
         </Text>
         <Text style={styles.fullWidth}>

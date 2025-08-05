@@ -27,7 +27,7 @@ function PrintDownload() {
             <LocationalClearance toPrint={toPrint} props={`OWNER'S COPY`} />
           </Page>
           <Page size="Folio" style={styles.page}>
-            <LocationalClearance toPrint={toPrint} props={`OWNER'S COPY`} />
+            <LocationalClearance toPrint={toPrint} props={`ZONING'S COPY`} />
           </Page>
           <Page size="Folio" style={styles.page}>
             <EvaluationReport toPrint={toPrint} />

@@ -8,11 +8,13 @@ import { Toaster } from "react-hot-toast";
 import Misc from "../../buttons/Misc";
 import {
   barangay,
+  compliance,
   decision,
   errorMessage,
   inspector,
   legalBasis,
   production,
+  remarks,
   zoningClassification,
 } from "../../Sidebar/array/arrays";
 import Error from "../Error";
@@ -334,10 +336,10 @@ function Edit({ selected }) {
           </select>
 
           {/* ------------LineBreak--------------- */}
-          <input
+          {/* <input
             type="text"
             placeholder="OR Number"
-            {...register("orNumber", { required: true })}
+            {...register("orNumber")}
           ></input>
           <input
             type="date"
@@ -347,12 +349,27 @@ function Edit({ selected }) {
             type="number"
             placeholder="Amount Paid"
             {...register("amountPaid")}
-          ></input>
+          ></input> */}
           <select {...register("inspector")}>
             {inspector.map((el, i) => (
               <option key={i}>{el.name}</option>
             ))}
           </select>
+          <select {...register("remark")}>
+            {remarks.map((el, i) => (
+              <option key={i}>{el.remark}</option>
+            ))}
+          </select>
+          <select {...register("compliance")}>
+            {compliance.map((el, i) => (
+              <option key={i}>{el}</option>
+            ))}
+          </select>
+          {/* <select {...register("remark")}>
+            {remarks.map((el, i) => (
+              <option key={i}>{el}</option>
+            ))}
+          </select> */}
         </RegistrationWrapper>
         {/* <Requirements reg={register} /> */}
         <ButtonStyle

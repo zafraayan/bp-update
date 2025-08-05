@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import {
   barangay,
+  compliance,
   decision,
   errorMessage,
   inspector,
@@ -186,16 +187,35 @@ function Registration(e) {
             type="text"
             placeholder="Last Name"
             {...register("lName")}
+            onBlur={(e) => {
+              const trimmed = e.target.value.trim();
+              e.target.value = trimmed;
+              setValue("lName", trimmed); // update form state
+            }}
           ></input>
           <input
             type="text"
             placeholder="First Name"
             {...register("fName")}
+            onBlur={(e) => {
+              const trimmed = e.target.value.trim();
+              e.target.value = trimmed;
+              setValue("fName", trimmed); // update form state
+            }}
           ></input>
           <input
             type="text"
             placeholder="Middle Name"
             {...register("mName")}
+            onChange={(e) => {
+              const noPeriods = e.target.value.replace(/\./g, ""); // remove all periods
+              setValue("mName", noPeriods);
+            }}
+            onBlur={(e) => {
+              const trimmed = e.target.value.trim();
+              e.target.value = trimmed;
+              setValue("mName", trimmed); // update form state
+            }}
           ></input>
 
           {/* ------------LineBreak--------------- */}
@@ -203,6 +223,11 @@ function Registration(e) {
             type="text"
             placeholder="Street or Building"
             {...register("building", { required: true })}
+            onBlur={(e) => {
+              const trimmed = e.target.value.trim();
+              e.target.value = trimmed;
+              setValue("building", trimmed); // update form state
+            }}
           ></input>
           <select {...register("barangay")}>
             {barangay.map((el, i) => (
@@ -214,6 +239,11 @@ function Registration(e) {
             placeholder="City"
             defaultValue="City of Talisay"
             {...register("city", { required: true })}
+            onBlur={(e) => {
+              const trimmed = e.target.value.trim();
+              e.target.value = trimmed;
+              setValue("city", trimmed); // update form state
+            }}
           ></input>
           {/* ------------LineBreak--------------- */}
           <select {...register("production")}>
@@ -222,6 +252,7 @@ function Registration(e) {
             ))}
           </select>
           <input
+            min="0"
             type="number"
             placeholder="Contact Number"
             {...register("cNumber")}
@@ -235,16 +266,35 @@ function Registration(e) {
             ))}
           </select>
           {/* ------------LineBreak--------------- */}
-          <input type="text" placeholder="Name of Corporation"></input>
+          <input
+            type="text"
+            placeholder="Name of Corporation"
+            {...register("corpName")}
+            onBlur={(e) => {
+              const trimmed = e.target.value.trim();
+              e.target.value = trimmed;
+              setValue("corpName", trimmed); // update form state
+            }}
+          ></input>
           <input
             type="text"
             placeholder="Name of Business"
             {...register("busName", { required: true })}
+            onBlur={(e) => {
+              const trimmed = e.target.value.trim();
+              e.target.value = trimmed;
+              setValue("busName", trimmed); // update form state
+            }}
           ></input>
           <input
             type="text"
             placeholder="Business Type"
-            {...register("busType", { required: true })}
+            {...register("busType")}
+            onBlur={(e) => {
+              const trimmed = e.target.value.trim();
+              e.target.value = trimmed;
+              setValue("busType", trimmed); // update form state
+            }}
           ></input>
           <input
             type="text"
@@ -254,6 +304,11 @@ function Registration(e) {
               setValue("busCapital", e.target.value.replace(/,/g, ""))
             }
             {...register("busCapital", { required: true, min: { value: 0 } })}
+            onBlur={(e) => {
+              const trimmed = e.target.value.trim();
+              e.target.value = trimmed;
+              setValue("busCapital", trimmed); // update form state
+            }}
           ></input>
           <input
             type="number"
@@ -316,7 +371,8 @@ function Registration(e) {
           <input
             type="number"
             placeholder="Area"
-            // {...register("area", { required: true, min: { value: 1 } })}
+            min="0"
+            {...register("area", { required: true, min: { value: 0 } })}
           ></input>
           <select {...register("legalBasis")}>
             {legalBasis.map((el, i) => (
@@ -325,40 +381,49 @@ function Registration(e) {
           </select>
 
           {/* ------------LineBreak--------------- */}
-          <input
+          {/* <input
             type="text"
             placeholder="OR Number"
-            {...register("orNumber")}
+            {...register("orNumber", { required: true })}
+            onBlur={(e) => {
+              const trimmed = e.target.value.trim();
+              e.target.value = trimmed;
+              setValue("orNumber", trimmed); // update form state
+            }}
           ></input>
           <input
             type="date"
-            {...register("orDate", { required: true })}
+            {...register("orDate")}
+            onBlur={(e) => {
+              const trimmed = e.target.value.trim();
+              const defaultDate = new Date().toISOString().split("T")[0];
+              const finalValue = trimmed || defaultDate;
+              e.target.value = finalValue;
+              setValue("orDate", finalValue);
+            }}
           ></input>
           <input
             type="number"
             placeholder="Amount Paid"
-            {...register("amountPaid", { required: true, min: { value: 1 } })}
-          ></input>
-          <select {...register("inspector")}>
-            {inspector.map((el, i) => (
-              <option key={i}>{el.name}</option>
-            ))}
-          </select>
-          <input
-            type="text"
-            placeholder="Decision Number"
-            {...register("decisionNumber", { required: true })}
-            // value={`CZC-07-${new Date().getFullYear()}-${lastElement?.id + 1}
-            onChange={(e) => setValue("decisionNumber", e.target.value)}
-            value={decNumber}
-            // style={{ pointerEvents: "none", color: "gray" }}
-          ></input>
-
+            {...register("amountPaid", { required: true, min: { value: 0 } })}
+          ></input> */}
           <select {...register("remark")}>
             {remarks.map((el, i) => (
               <option key={i}>{el.remark}</option>
             ))}
           </select>
+
+          <select {...register("compliance")}>
+            {compliance.map((el, i) => (
+              <option key={i}>{el}</option>
+            ))}
+          </select>
+          <select {...register("inspector")}>
+            {inspector.map((el, i) => (
+              <option key={i}>{el.name}</option>
+            ))}
+          </select>
+
           <Requirements reg={register} />
         </RegistrationWrapper>
         <ButtonStyle

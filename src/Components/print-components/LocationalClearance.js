@@ -29,19 +29,20 @@ function LocationalClearance({ toPrint, props }) {
                 {`TAL-BUS-NEW-07-${new Date()
                   .getFullYear()
                   .toString()
-                  .slice(2, 4)}-${toPrint.decisionNumber}`}
+                  .slice(2, 4)}-`}
               </Text>
               <Text style={styles.tdLabel}>Decision Number:</Text>
               <Text style={styles.tdValue}>
                 CZC-07-{new Date().getFullYear().toString().slice(2, 4)}-
-                {toPrint?.decisionNumber}
               </Text>
             </View>
             <View style={styles.firstTable}>
               <Text style={styles.tdLabel}>Date Received:</Text>
               <Text style={styles.tdValue}>{formatDate(toPrint?.date)}</Text>
-              <Text style={styles.tdLabel}></Text>
-              <Text style={styles.tdValue}></Text>
+              <Text style={styles.tdLabel}>Remarks:</Text>
+              <Text style={styles.tdValue}>
+                {/* {`${toPrint?.remark}/${toPrint?.compliance}`} */}
+              </Text>
             </View>
           </View>
 
@@ -52,7 +53,9 @@ function LocationalClearance({ toPrint, props }) {
                 <Text style={styles.secondTdValue}>
                   {!toPrint.fName && !toPrint.lName && !toPrint.mName
                     ? toPrint?.busName
-                    : `${toPrint?.fName} ${toPrint?.mName} ${toPrint?.lName}`}
+                    : `${toPrint?.fName} ${toPrint?.mName.slice(0, 1)}. ${
+                        toPrint?.lName
+                      }`}
                 </Text>
               </View>
               <View style={styles.heading}>
@@ -197,14 +200,9 @@ function LocationalClearance({ toPrint, props }) {
               </View>
 
               <View style={styles.orNumber}>
-                <Text>
-                  Or #:{" "}
-                  {toPrint?.orNumber === 0
-                    ? toPrint?.orNumber
-                    : "Not Specified"}
-                </Text>
-                <Text>Date Issued: {formatDate(toPrint?.orDate)}</Text>
-                <Text>Amount Paid: {toPrint?.amountPaid}</Text>
+                <Text>Or #:</Text>
+                <Text>Date Issued:</Text>
+                <Text>Amount Paid:</Text>
               </View>
             </View>
           </View>
