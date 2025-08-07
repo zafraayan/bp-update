@@ -33,20 +33,20 @@ function EvaluationReport({ toPrint }) {
         <Text style={styles.fullWidth}>
           Name of Applicant:
           <Text style={styles.value}>
-            {` ${toPrint?.fName} ${toPrint?.mName.slice(0, 1)}. ${
-              toPrint?.lName
-            }`}
+            {` ${toPrint?.fName.toUpperCase()} ${toPrint?.mName
+              .slice(0, 1)
+              .toUpperCase()}. ${toPrint?.lName.toUpperCase()}`}
           </Text>
         </Text>
         <Text style={styles.fullWidth}>
           Name of Establishment:
-          <Text style={styles.value}> {toPrint?.busName}</Text>
+          <Text style={styles.value}> {toPrint?.busName.toUpperCase()}</Text>
         </Text>
         <Text style={styles.twoColumns}>
           Location:
           <Text
             style={styles.value}
-          >{` ${toPrint?.building}, ${toPrint?.barangay}, ${toPrint?.city}`}</Text>
+          >{` ${toPrint?.building.toUpperCase()}, ${toPrint?.barangay.toUpperCase()}, ${toPrint?.city.toUpperCase()}`}</Text>
         </Text>
         <Text style={styles.twoColumns}>
           Area:
@@ -59,7 +59,7 @@ function EvaluationReport({ toPrint }) {
         </Text>
         <Text style={styles.fullWidth}>
           Business Description:{" "}
-          <Text style={styles.value}>{toPrint?.busType}</Text>
+          <Text style={styles.value}>{toPrint?.busType.toUpperCase()}</Text>
         </Text>
         <Text style={styles.fullWidth}>
           Name of Authorized Representative:
