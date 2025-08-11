@@ -82,7 +82,9 @@ function LocationalClearance({ toPrint, props }) {
               </View>
               <View style={styles.heading}>
                 <Text style={styles.secondTd}>CAPITAL INVESTED:</Text>
-                <Text style={styles.secondTdValue}>{toPrint?.busCapital}</Text>
+                <Text style={styles.secondTdValue}>
+                  {Number(toPrint?.busCapital) === 0 && "Not Specified"}
+                </Text>
               </View>
             </View>
             <View style={styles.secondTable}>
