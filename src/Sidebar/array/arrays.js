@@ -23,7 +23,7 @@ import Applicants from "../../Components/Applicants/Applicants";
 import ApplicantEdit from "../../Components/Applicants/ApplicantEdit";
 import ApplicantPrint from "../../Components/Applicants/ApplicantPrint";
 
-export const compliance = ["Compliant", "Non-Compliant"];
+export const compliance = ["Comp.", "Non-Comp."];
 
 export const navItems = [
   {
@@ -354,11 +354,11 @@ export const errorMessage = [
 export const remarks = [
   {
     id: 1,
-    remark: "Conforming",
+    remark: "Conf.",
   },
   {
     id: 2,
-    remark: "Non-Conforming",
+    remark: "Non-Conf.",
   },
 ];
 

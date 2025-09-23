@@ -41,7 +41,7 @@ function LocationalClearance({ toPrint, props }) {
               <Text style={styles.tdValue}>{formatDate(toPrint?.date)}</Text>
               <Text style={styles.tdLabel}>Remarks:</Text>
               <Text style={styles.tdValue}>
-                {/* {`${toPrint?.remark}/${toPrint?.compliance}`} */}
+                {toPrint?.remark} - {toPrint?.compliance}
               </Text>
             </View>
           </View>
